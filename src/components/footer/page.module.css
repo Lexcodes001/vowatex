@@ -1,0 +1,334 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-size: 200%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(180deg, var(--surface-1) 0%, var(--opaq-1) 100%), url(../../../public/assets/images/Mesh\ Holographic\ Gradients\ -\ Dark\ Gradient\ 12.png);
+}
+
+main .top {
+    width: calc(100% - 4rem);
+    max-width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 2rem;
+    z-index: 1;
+    position: relative;
+    border-radius: 2rem 2rem 0 0;
+}
+
+main .top::after {
+    position: absolute;
+    left: -70%;
+    top: -50%;
+    opacity: .05;
+    z-index: -1;
+    content: '';
+    width: 200%;
+    height: 100%;
+    background-image: url(../../../public/assets/images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    display: none;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+
+.box img {
+    width: 5rem;
+    height: auto;
+}
+
+.box header {
+    color: var(--text-1);
+    font-size: 2.5rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.about p {
+    color: var(--text-2);
+    font-size: .9rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: justify;
+}
+
+.top .links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 2rem 3rem;
+}
+
+.top .links section {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.links section div {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .7rem 1.5rem;
+}
+
+.links section header {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--text-1);
+}
+
+
+.links section a {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: var(--text-2);
+    font-size: .9rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.links section:not(:last-child) a::after {
+    content: '↗';
+    position: absolute;
+    top: -6px;
+    right: -8px;
+}
+
+.links section a:hover {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.links section:not(:last-child) a:hover::after {
+    color: var(--brand);
+}
+
+.links section.socials {
+    width: 100%;
+}
+
+.links section.socials a {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .3rem;
+    font-size: .8rem;
+}
+
+.links section.socials div {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .7rem 1rem;
+}
+
+.links section.socials div a svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.links section.socials div a svg path {
+    fill: var(--text-2);
+}
+
+.links section.socials div a:hover svg path {
+    fill: var(--brand);
+}
+
+main .bottom {
+    height: fit-content;
+    padding: .8rem 2rem .5rem;
+    background-color: var(--opaq-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.bottom .other-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.other-links a {
+    color: var(--text-1);
+    font-size: .6rem;
+    font-weight: 600;
+}
+
+.bottom .attribution {
+    color: var(--text-2);
+    font-size: .5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: .5rem;
+    gap: 0;
+}
+
+.bottom .attribution p {
+    height: .8rem;
+}
+
+@media only screen and (max-width: 400px) {
+    .links section.socials div a p {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer main {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer main .top {
+        height: fit-content;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 3rem;
+        width: calc(100% - 6rem);
+        max-width: calc(100% - 6rem);
+        padding: 6rem 3rem 2rem;
+    }
+
+    .top .about {
+        max-width: 40%;
+    }
+
+    .box {
+        gap: .5rem;
+    }
+
+    .box img {
+        width: 4rem;
+        height: auto;
+    }
+
+    .box header {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .top .links {
+        max-width: 50%;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+    }
+
+    .top .links section {
+        width: 100%;
+        gap: .7rem;
+    }
+
+    .links section.socials a {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .3rem;
+        font-size: .9rem;
+    }
+
+    .links section.socials div {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .links section.socials div a svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    main .bottom {
+        height: 2rem;
+        width: calc(100% - 6rem);
+        max-width: calc(100% - 6rem);
+        padding: .5rem 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .bottom .other-links {
+        gap: 1rem;
+    }
+
+    .other-links a {
+        font-size: .5rem;
+    }
+
+    .bottom .attribution {
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+    }
+
+    .bottom .attribution p {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    .top,
+    .bottom {
+        width: calc(90% - 6rem) !important;
+        max-width: calc(90% - 6rem) !important;
+    }
+
+    .box img {
+        width: 5rem;
+    }
+
+    .box header {
+        color: var(--text-1);
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .top,
+    .bottom {
+        width: calc(80% - 6rem) !important;
+        max-width: calc(80% - 6rem) !important;
+    }
+}

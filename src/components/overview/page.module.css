@@ -1,0 +1,64 @@
+section.overview {
+    width: calc(100% - 8rem);
+    max-width: 600px;
+    padding: 4.5rem 2rem 0;
+    margin: auto 2rem;
+    height: 40dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(180deg, var(--opaq), var(--opaq-1)), url(../../../public/assets/images/Mesh\ Holographic\ Gradients\ -\ Dark\ Gradient\ 05.png);
+    position: relative;
+    gap: 1rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    /* margin-bottom: 5rem; */
+}
+
+section.overview header {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 3rem;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(180deg, var(--text-2) 30%, var(--text-1) 70%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%) 0 0 / 200% 100%;
+    background-clip: text;
+    margin: 0;
+    padding: 0;
+}
+
+.overview p {
+    color: var(--text-2);
+    font-size: .9rem;
+    text-align: center;
+}
+
+.overview header::after {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    section.overview {
+        margin: auto 3rem;
+        width: calc(100% - 10rem);
+        max-width: calc(100% - 10rem);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    section.overview {
+        width: calc(90% - 10rem);
+        max-width: calc(90% - 10rem);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    section.overview {
+        width: calc(80% - 10rem);
+        max-width: calc(80% - 10rem);
+    }
+}

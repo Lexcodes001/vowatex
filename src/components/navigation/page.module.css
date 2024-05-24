@@ -1,0 +1,267 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--surface-4);
+    background-image: radial-gradient(var(--opaq) 1px,
+            var(--opaq-1) 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px);
+    -moz-backdrop-filter: blur(3px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 2rem;
+    align-items: center;
+    width: calc(100% - 3rem);
+    height: 100%;
+    position: relative;
+}
+
+.box {
+    display: flex;
+    align-items: flex-end;
+    gap: .2rem;
+}
+
+.box img {
+    width: 2rem;
+    height: auto;
+}
+
+.box header {
+    color: var(--text-1);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+.sm .toggle {
+    border-radius: 50%;
+}
+
+.sm .toggle.isOpen {
+    background-color: var(--border-line);
+}
+
+.navbar .box,
+.sm .toggle {
+    z-index: 999;
+}
+
+.sm {
+    display: flex;
+}
+
+.sidemenu {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100dvh;
+    inset: 0;
+    z-index: 1;
+    background-image: radial-gradient(var(--opaq) 1px,
+            var(--opaq-1) 1px), radial-gradient(var(--opaq) 1px,
+            var(--opaq-1) 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    -moz-backdrop-filter: blur(3px);
+}
+
+.sidemenu .content {
+    width: calc(50% - 2rem);
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-image: radial-gradient(var(--opaq) 1px,
+            var(--opaq-1) 1px), radial-gradient(var(--opaq) 1px,
+            var(--opaq-1) 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    -moz-backdrop-filter: blur(3px);
+}
+
+.sidemenu .content .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .2rem;
+}
+
+.sidemenu .links header {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-2);
+    margin-bottom: .5rem;
+    font-weight: 600;
+    /* align-self: center; */
+}
+
+.sidemenu .links a {
+    width: 100%;
+    height: 2rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-1);
+    padding: .5rem 1rem .5rem;
+    display: inherit;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .6rem;
+    border-radius: 2rem 0 0 2rem;
+    transition: padding .5s ease;
+}
+
+.sidemenu .links a svg {
+    fill: var(--text-2);
+}
+
+.sidemenu .links a:hover {
+    text-decoration: none;
+    background-color: var(--border-line);
+}
+
+.sidemenu .links a span {
+    width: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidemenu .links a.active {
+    color: var(--surface-1);
+    font-size: .9rem;
+    background-image: linear-gradient(135deg, var(--text-1) 30%, var(--text-2) 50%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
+}
+
+.sidemenu .links a.active svg {
+    fill: var(--surface-1);
+}
+
+.lg {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar {
+        padding: 0 2rem 0 3rem;
+        width: calc(100% - 5rem);
+        max-width: calc(100% - 5rem);
+    }
+
+    .sm {
+        display: none;
+    }
+
+    .lg {
+        display: flex;
+    }
+
+    .lg .links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .lg .links a {
+        font-size: .7rem;
+        color: var(--text-2);
+        padding: .3rem .5rem .2rem;
+        height: 1.5rem;
+        display: inherit;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        z-index: 5;
+        border-radius: .5rem;
+        font-weight: 700;
+    }
+
+    .links a::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transform: scaleX(0) translateX(-50%);
+        transform-origin: left;
+        left: 50%;
+        top: 110%;
+        width: 6px;
+        height: 6px;
+        border-radius: .5rem;
+        background-color: transparent;
+        transition: transform .7s ease;
+
+    }
+
+    .lg .links a:hover {
+        text-decoration: none;
+        background-color: var(--border-line);
+    }
+
+    .lg .links a:hover::after {
+        transform: scaleX(0);
+    }
+
+    .lg .links a span {
+        width: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: width .5s ease;
+    }
+
+    .lg .links a.active {
+        color: var(--surface-1);
+        background-image: linear-gradient(180deg, var(--text-1) 10%, var(--text-2) 50%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
+    }
+
+    .lg .links a.active::after {
+        width: 1.2rem;
+        transform: scaleX(1) translateX(-50%);
+        background-image: linear-gradient(180deg, var(--text-2) 30%, var(--text-1) 50%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
+    }
+
+    .lg .links a.active span,
+    .lg .links a:hover span {
+        width: .9rem;
+        margin-right: .2rem;
+    }
+
+    .lg .links a:hover svg {
+        fill: var(--text-2);
+    }
+
+    .lg .links a.active svg {
+        fill: var(--surface-1);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .navbar {
+        width: calc(90% - 5rem);
+        max-width: calc(90% - 5rem);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .navbar {
+        width: calc(80% - 5rem);
+        max-width: calc(80% - 5rem);
+    }
+}
