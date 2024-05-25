@@ -49,7 +49,7 @@
 .mission h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     color: var(--text-1);
 }
 
@@ -95,14 +95,14 @@ section.story .box p {
     text-align: left; 
 }
 
-section.story .box p::first-letter {
+/* section.story .box p::first-letter {
     font-size: 3rem;
     font-weight: 600;
     padding-right: 8px;
     -webkit-initial-letter: 2;
     initial-letter: 2;
     color: var(--text-1);
-}
+} */
 
 section.story .story-wave {
     width: 100%;
@@ -195,7 +195,7 @@ div.values {
     text-align: center !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1.7rem;
+    line-height: 1.5rem;
 }
 
 .values .flip-container .flipper .front header::after {

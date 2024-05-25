@@ -1,9 +1,9 @@
 section.overview {
-    width: calc(100% - 8rem);
+    width: calc(100% - 4rem);
     max-width: 600px;
     padding: 4.5rem 2rem 0;
-    margin: auto 2rem;
-    height: 40dvh;
+    margin: auto;
+    height: 30dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,6 @@ section.overview {
     position: relative;
     gap: 1rem;
     border-radius: 0 0 1.5rem 1.5rem;
-    /* margin-bottom: 5rem; */
 }
 
 section.overview header {

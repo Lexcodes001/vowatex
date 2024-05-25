@@ -94,8 +94,11 @@
 }
 
 .box .theme button.active {
-    /* border: 1px solid var(--surface-4); */
-    background-color: var(--text-1);
+    background-color: var(--surface-4);
+}
+
+.box .theme button.active svg{
+    fill: var(--text-1);
 }
 
 .box .theme button svg {
