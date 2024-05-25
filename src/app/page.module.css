@@ -87,7 +87,7 @@ section.cta div header p {
   display: none;
 }
 
-section.cta div header span {
+section.cta div header span.brand {
   display: inline;
   font-weight: 700;
   width: fit-content;
@@ -189,7 +189,7 @@ section.why article .strategies {
   width: 100%;
   object-fit: cover;
   height: 15rem;
-  border-radius: 50% 50% .2rem .2rem;
+  border-radius: 1rem;
   border: 1px solid var(--border-line);
 }
 
@@ -294,7 +294,7 @@ section.acheivements .stats .stat .figures {
   align-items: center;
   height: 6rem;
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-1);
   /* color: transparent;
   -webkit-text-fill-color: transparent;
@@ -351,8 +351,28 @@ section.process .steps .step span {
   align-items: center;
   border-radius: 50%;
   background-color: var(--border-line);
-  background-image: linear-gradient(180deg, var(--text-1) 50%, var(--text-2) 50%),
+  background-image: linear-gradient(180deg, var(--text-1) 100%, var(--text-2) 100%),
     linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
+}
+
+section.process .steps .step:nth-child(2) span {
+  background-image: linear-gradient(180deg, var(--text-1) 75%, var(--text-2) 75%),
+      linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%) !important;
+}
+
+section.process .steps .step:nth-child(3) span {
+  background-image: linear-gradient(180deg, var(--text-1) 50%, var(--text-2) 50%),
+      linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%) !important;
+}
+
+section.process .steps .step:nth-child(4) span {
+  background-image: linear-gradient(180deg, var(--text-1) 25%, var(--text-2) 25%),
+      linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%) !important;
+}
+
+section.process .steps .step:nth-child(5) span {
+  background-image: linear-gradient(180deg, var(--text-1) 0%, var(--text-2) 0%),
+      linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%) !important;
 }
 
 
@@ -436,7 +456,7 @@ section.stories article {
   background-image: linear-gradient(to bottom, var(--border-line), var(--surface-3));
   position: relative;
   cursor: grab;
-  border: 2px solid var(--text-2);
+  border: 1px solid var(--text-2);
 }
 
 section.stories article::after {
@@ -577,7 +597,7 @@ section.stories article .testimony {
     display: none;
   }
 
-  section.cta div header span {
+  section.cta div header span.brand {
     display: inline;
     font-weight: 700;
     width: fit-content;
@@ -589,6 +609,7 @@ section.stories article .testimony {
   }
 
   section.cta div article {
+    max-width: 90%;
     font-size: .9rem;
     text-align: left;
   }
@@ -618,7 +639,6 @@ section.stories article .testimony {
   section.why {
     display: flex;
     flex-direction: column;
-    width: 80%;
   }
 
   section.why div.intro {
@@ -655,19 +675,23 @@ section.stories article .testimony {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     padding-bottom: 0;
     border-bottom: none;
   }
 
   .strategies .step:nth-child(2) {
     flex-direction: row-reverse;
+    text-align: right;
   }
 
   .strategies .step:nth-child(2) .texts {
     align-items: flex-end;
   }
-
+  .strategies .step:nth-child(2) .texts p{
+    text-align: right;
+  }
+  
   .strategies .step img {
     width: 45%;
     height: auto;
@@ -776,6 +800,7 @@ section.stories article .testimony {
   section.stories {
     justify-content: center;
     align-items: center;
+    padding-bottom: 5rem;
   }
 
   section.stories .user-stories {
@@ -820,6 +845,7 @@ section.stories article .testimony {
   section.cta div header span {
     font-size: 2.6rem;
     font-weight: 600;
+    line-height: 1.4rem;
   }
 }
 

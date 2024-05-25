@@ -100,7 +100,6 @@ export default function Footer() {
           </div>
           <div className={styles["attribution"]}>
             <p>Copyright 2024 © Vowatex Content.</p>
-            <p>Website By Lexthegreat00_</p>
           </div>
         </div>
       </main>

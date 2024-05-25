@@ -242,11 +242,11 @@ div.story .details .role {
         justify-self: center;
     }
 
-        .cip-main header::after {
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    .cip-main header::after {
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .cip-main div.intro {
         display: flex;

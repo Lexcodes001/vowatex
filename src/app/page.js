@@ -1,5 +1,6 @@
 "use client";
 import Navigation from "@/components/navigation/page";
+import AnimatedText from "@/components/framer/text-animation";
 import Footer from "@/components/footer/page";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -183,146 +184,23 @@ const variants = {
 };
 
 const textArray = [
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={0}
-  >
-    Captivate viewers
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={1}
-  >
-    Script huge success
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={2}
-  >
-    Automate growth
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={3}
-  >
-    Amplify engagement
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={4}
-  >
-    Level up content
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={5}
-  >
-    Channel domination
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={6}
-  >
-    Resonate deeper
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={7}
-  >
-    Ignite your channel
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={8}
-  >
-    Craft magic scripts
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={9}
-  >
-    Optimize for YT
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={10}
-  >
-    Unleash creativity
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={11}
-  >
-    Forge connections
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={12}
-  >
-    Elevate storytelling
-  </motion.p>,
-  <motion.p
-    variants={variants}
-    initial="leftFade"
-    animate="center"
-    exit="rightFade"
-    transition={{ duration: 0.5 }}
-    key={13}
-  >
-    Conquer algorithms
-  </motion.p>,
+  "Captivate Viewers",
+  "Script Success",
+  "Automate Growth",
+  "Amplify Engagement",
+  "Level-up Content",
+  "Channel Domination",
+  "Resonate Deeper",
+  "Ignite your Channel",
+  "Craft Magic Scripts",
+  "Optimize Workflows",
+  "Unleash Creativity",
+  "Forge Connections",
+  "Elevate Storytelling",
+  "Conquer Algorithms",
+  "Streamline Content",
+  "Transcend Boundaries",
+  "Unlock Potential",
 ];
 
 export default function Home() {
@@ -339,7 +217,7 @@ export default function Home() {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * textArray.length);
       setText(textArray[randomIndex]);
-    }, 4000); // Change text every 1-4 seconds
+    }, 5000); 
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, []);
@@ -401,22 +279,17 @@ export default function Home() {
         <section className={styles.cta}>
           <div>
             <header>
-              <AnimatePresence mode="popLayout">{text}</AnimatePresence>
+              <AnimatedText text={text} once={false}/>
               <br />
-              with <span>Vowatex.</span>
+              with <span className={styles["brand"]}>Vowatex.</span>
             </header>
             <article>
-              Maestros of
-              spellbinding scriptwriting and cosmic automation, propelling
-              brands to unprecedented heights.
+              Maestros of spellbinding scriptwriting and cosmic automation,
+              propelling brands to unprecedented heights.
             </article>
             <Link href={"/about"}>GET STARTED</Link>
           </div>
-          <Image
-            src={Unleash}
-            alt="unleash Illustration"
-            priority
-          />
+          <Image src={Unleash} alt="unleash Illustration" priority />
         </section>
 
         <section className={styles["about"]}>
