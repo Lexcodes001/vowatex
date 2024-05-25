@@ -103,7 +103,7 @@ const Toggle = () => {
           {isOpen && (
             <motion.div
               initial={{
-                right: "50%",
+                right: "0%",
                 scale: 0,
                 opacity: 0,
                 zIndex: -1,
@@ -113,7 +113,7 @@ const Toggle = () => {
               }}
               animate={
                 isOpen && {
-                  right: "120%",
+                  right: "130%",
                   transform: "translateY(-50%)",
                   transformOrigin: "right",
                   top: "50%",
