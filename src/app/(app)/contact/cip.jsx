@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
-import reviewImg from "@/images/dpF2.jpg";
+import reviewImg from "@/images/dpF2.webp";
 import { useState } from "react";
 
 const defaultInputs = {

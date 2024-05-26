@@ -19,8 +19,10 @@ const montserratItalic = localFont({
 // });
 
 export const metadata = {
-  title: "Vowatex",
-  description: "Home",
+  title: {
+    template: "%s | Vowatex",
+    default: "Vowatex",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Vowatex",
-  description: "To serve you",
+  title: "Careers",
+  description: "Job Openings",
 };
 
 export default function Layout({ children }) {

@@ -836,7 +836,7 @@ section.stories article .testimony {
   }
   
   section.cta div header,
-  section.cta div header span {
+  section.cta div header span.brand {
     font-size: 2.6rem;
     font-weight: 600;
     line-height: 1.4rem;

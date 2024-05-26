@@ -175,7 +175,7 @@ div.story {
 }
 
 div.story .review p {
-    shape-outside: url('../../../../public/assets/images/dpF2.jpg');
+    shape-outside: url('../../../../public/assets/images/dpF2.webp');
     shape-margin: 10px;
     font-size: .8rem;
     font-family: var(--montserrat-italic), sans-serif;

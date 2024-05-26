@@ -14,7 +14,7 @@ const getThemeFromStorage = () => {
 };
 
 const [theme, setTheme] = useState(getThemeFromStorage());
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = useState('default');
 
   const handleThemeChange = (matches) => {
     const selectedTheme = matches ? "dark" : "light";
