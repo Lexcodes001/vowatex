@@ -279,7 +279,7 @@ export default function Home() {
         <section className={styles.cta}>
           <div>
             <header>
-              <AnimatedText text={text} once={false}/>
+              <AnimatedText text={text} once={false} />
               <br />
               with <span className={styles["brand"]}>Vowatex.</span>
             </header>
@@ -295,7 +295,7 @@ export default function Home() {
         <section className={styles["about"]}>
           <header>What we are</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={-5}>Youtube Automation</ParallaxText>
+            <ParallaxText baseVelocity={-5}>What we are ◦</ParallaxText>
           </div>
           <p className={styles["intro"]}>
             At Vowatex, these seven values guide our actions, ensuring that
@@ -308,7 +308,7 @@ export default function Home() {
         <section className={styles["why"]}>
           <header>Why us?</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={-5}>Youtube Automation</ParallaxText>
+            <ParallaxText baseVelocity={-5}>Why us? ◦</ParallaxText>
           </div>
           <div className={styles["intro"]}>
             <Image src={Why} alt="why" />
@@ -368,7 +368,7 @@ export default function Home() {
         <section className={styles["solutions"]}>
           <header>Solutions Offered</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={5}>Solution offered</ParallaxText>
+            <ParallaxText baseVelocity={5}>Solution offered ◦</ParallaxText>
           </div>
           <article>
             {solutions.map((item) => (
@@ -386,7 +386,7 @@ export default function Home() {
         <section className={styles["acheivements"]}>
           <header className={styles["bridge"]}>So far...</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={-5}>Youtube Automation</ParallaxText>
+            <ParallaxText baseVelocity={-5}>Acheivements ◦</ParallaxText>
           </div>
           <div className={styles["stats"]}>
             <div className={styles["stat"]}>
@@ -413,7 +413,7 @@ export default function Home() {
         <section className={styles["process"]}>
           <header>Our Content Voyage</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={-5}>Youtube Automation</ParallaxText>
+            <ParallaxText baseVelocity={-5}>Our Content Voyage ◦</ParallaxText>
           </div>
           <div className={styles["steps"]}>
             {steps.map((step) => (
@@ -433,7 +433,7 @@ export default function Home() {
         <section className={styles["stories"]}>
           <header>Reviews</header>
           <div className={styles["scroll-effect"]}>
-            <ParallaxText baseVelocity={-5}>Youtube Automation</ParallaxText>
+            <ParallaxText baseVelocity={-5}>Testimonials ◦</ParallaxText>
           </div>
           <div className={styles["user-stories"]}>
             <div className={styles["avatars"]}>

@@ -1,7 +1,7 @@
 .parallax {
     letter-spacing: -2px;
     line-height: 1;
-    margin: 2rem 0;
+    margin: 1.5rem 0 1rem;
     white-space: nowrap;
     display: flex;
     flex-wrap: nowrap;
@@ -17,12 +17,11 @@
     flex-wrap: nowrap;
     -webkit-font-smoothing: antialiased;
     color: var(--border-line);
-    opacity: .5;
+    opacity: .3;
 }
 
 .parallax span {
     display: block;
-    margin-right: 30px;
 }
 
 @media only screen and (min-width: 900px) {

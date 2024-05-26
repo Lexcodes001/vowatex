@@ -146,7 +146,7 @@
 .sidemenu .links a.active {
     color: var(--surface-1);
     font-size: .9rem;
-    background-image: linear-gradient(135deg, var(--text-1) 30%, var(--text-2) 50%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
+    background-image: linear-gradient(135deg, var(--text-1) 30%, var(--text-2) 80%), linear-gradient(180deg, var(--opaq-1) 50%, var(--opaq) 50%);
 }
 
 .sidemenu .links a.active svg {

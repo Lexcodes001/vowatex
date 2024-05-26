@@ -13,7 +13,6 @@
 /.next/
 /out/
 /.firebase/
-#/.github/
 
 # production
 /build

@@ -59,10 +59,10 @@ export default function ParallaxText({ children, baseVelocity = 100 }) {
   return (
     <div className={styles["parallax"]}>
       <motion.div className={styles["scroller"]} style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
+        <span>&nbsp;{children} </span>
+        <span>&nbsp;{children} </span>
+        <span>&nbsp;{children} </span>
+        <span>&nbsp;{children} </span>
       </motion.div>
     </div>
   );
