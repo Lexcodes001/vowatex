@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Card from '@/components/flip-card/page';
 import EngagementIcon from "@/images/icons-engagement.webp";
 import AutomateIcon from "@/images/icons-automate.webp";
 import ContentIcon from "@/images/icons-content.webp";
@@ -53,19 +54,8 @@ const Values = ({all}) => {
 
   return (
     <div className={styles["values"]}>
-      {returnedValues.map((value) => (
-        <div className={styles["flip-container"]} key={value.desc}>
-          <div className={styles["flipper"]}>
-            <div className={styles["front"]}>
-              <Image src={value.icon} alt="icon" />
-              <header>{value.name}</header>
-            </div>
-            <div className={styles["back"]}>
-              <Image src={value.icon} alt="icon" />
-              <p>{value.desc}</p>
-            </div>
-          </div>
-        </div>
+      {returnedValues.map((value, index) => (
+        <Card key={index} icon={value.icon} header={value.name} desc={value.desc}/>
       ))}
       {typeof all === 'number' && <Link href={'/about'} className={styles["see-more"]}>
         <Image src={ForwardIcon} alt="icon" />

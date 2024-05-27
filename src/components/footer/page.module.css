@@ -316,7 +316,7 @@ main .bottom {
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1170px) {
 
     .top,
     .bottom {

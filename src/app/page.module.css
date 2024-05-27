@@ -396,108 +396,6 @@ section.process .steps .step article p {
   color: var(--text-2);
 }
 
-section.stories .user-stories {
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 2rem;
-}
-
-section.stories .avatars {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(7, 1fr);
-  align-items: center;
-  justify-content: center;
-}
-
-section.stories .avatars span {
-  max-width: 3rem;
-  max-height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-section.stories .avatars img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  opacity: 0.5 !important;
-  filter: grayscale(100%);
-  align-self: center;
-  justify-self: center;
-}
-
-section.stories .avatars img.active {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 1 !important;
-  filter: none;
-  border: 2px solid var(--brand);
-}
-
-section.stories article {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1.5rem 1.5rem 1.5rem;
-  border-radius: 1rem;
-  background-image: linear-gradient(to bottom, var(--border-line), var(--surface-3));
-  position: relative;
-  cursor: grab;
-  border: 1px solid var(--text-2);
-}
-
-section.stories article::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 7px;
-  border-style: solid;
-  border-color: transparent transparent var(--text-2) transparent;
-}
-
-section.stories article .names {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .4rem;
-}
-
-section.stories article .names p:nth-child(1) {
-  color: var(--text-1);
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-section.stories article .names p:nth-child(2) {
-  color: var(--text-2);
-  font-size: .8rem;
-  font-weight: 600;
-}
-
-section.stories article .names p:nth-child(3) {
-  color: var(--text-2);
-  font-size: .8rem;
-  font-weight: 600;
-  font-family: var(--montserrat-italic), sans-serif;
-}
-
-section.stories article .testimony {
-  color: var(--text-2);
-  font-size: .9rem;
-  font-family: var(--montserrat-italic), sans-serif;
-  text-align: center;
-}
-
 @keyframes breath {
   from {
     transform: translateY(0);
@@ -790,37 +688,6 @@ section.stories article .testimony {
     display: flex;
     flex-direction: column;
   }
-
-  section.stories {
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5rem;
-  }
-
-  section.stories .user-stories {
-    width: 75%;
-  }
-
-  section.stories .avatars span {
-    max-width: 3rem;
-    max-height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  section.stories article {
-    padding: 1.5rem 1.5rem;
-    border-radius: 1rem;
-  }
-
-  section.stories article .names {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .2rem;
-  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -843,7 +710,7 @@ section.stories article .testimony {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1170px) {
   .main section {
     width: calc(80% - 6rem);
     max-width: calc(80% - 6rem);

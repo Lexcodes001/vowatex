@@ -8,7 +8,7 @@ export default function Blog() {
       <Overview
         header={"OUR BLOG"}
         tagline={
-          "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
+          "Coming soon!"
         }
       />
 

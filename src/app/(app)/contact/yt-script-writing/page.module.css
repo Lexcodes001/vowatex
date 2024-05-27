@@ -1,0 +1,131 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main .unique-sect {
+    width: calc(100% - 4rem);
+    max-width: 600px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.unique-sect header {
+    width: fit-content;
+    position: relative;
+    align-self: left;
+    z-index: 1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-1);
+    text-align: left;
+    border-radius: .5rem;
+    margin: 3rem 0 1.5rem;
+    padding: .5rem 0;
+    line-height: 1.5rem;
+}
+
+.unique-sect header::after {
+    position: absolute;
+    content: '';
+    width: 3.5rem;
+    height: 4px;
+    background-color: var(--border-line);
+    bottom: -1rem;
+    left: 0;
+    border-radius: 1rem;
+}
+
+section.content {
+    padding: 6rem 2rem 2rem !important;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 2rem;
+    background-color: var(--surface-4);
+}
+
+section.content article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+section.content article h1 {
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+    font-weight: 500;
+    color: var(--text-1);
+}
+
+section.content article div.specifics {
+    display: flex;
+    flex-direction: column;
+}
+
+section.content article div.specifics h3{
+    color: var(--text-1);
+    font-size: 1rem;
+}
+
+section.content article div.specifics ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+section.content article div.specifics ul li {
+    color: var(--text-2);
+    font-size: .9rem;
+}
+
+section.content article div.specifics ul li::before {
+    content: '';
+}
+
+div.specific-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: .5rem;
+    background-color: var(--surface-1);
+}
+
+div.specific-form h3{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-1);
+}
+
+
+@media only screen and (min-width: 900px) {
+
+    .main section.unique-sect {
+        width: calc(90% - 6rem);
+        max-width: calc(90% - 6rem);
+    }
+
+    div.specific-form form {
+        width: calc(80% - 2.6rem);
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+
+    .main section.unique-sect {
+        width: calc(80% - 6rem);
+        max-width: calc(80% - 6rem);
+    }
+
+    div.specific-form form {
+        width: calc(80% - 2.6rem);
+    }
+}

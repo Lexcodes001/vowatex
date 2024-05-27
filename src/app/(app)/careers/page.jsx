@@ -8,7 +8,7 @@ export default function Careers() {
       <Overview
         header={"CAREERS"}
         tagline={
-          "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
+          "Coming soon!"
         }
       />
 

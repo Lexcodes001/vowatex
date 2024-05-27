@@ -259,7 +259,7 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1170px) {
     .navbar {
         /* width: calc(80% - 4rem);
         max-width: calc(80% - 4rem); */
