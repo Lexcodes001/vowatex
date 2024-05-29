@@ -156,7 +156,7 @@ div.intro ol {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    
+
 }
 
 div.intro ol li {
@@ -185,9 +185,10 @@ div.form {
     gap: 1.5rem;
 }
 
-div.form form {
+:is(div.form, section.form-box) form {
     display: flex;
     flex-direction: column;
+    gap: .8rem;
 }
 
 form div.input {
@@ -196,7 +197,7 @@ form div.input {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     /* background-color: var(--border-line); */
 }
 
@@ -232,7 +233,7 @@ form div.input input {
     text-align: start;
     padding: 0 1rem 0 1.4rem;
     background-image: linear-gradient(to right bottom, var(--surface-4), var(--opaq));
-    outline: 1px solid var(--surface-4);
+    outline: 1px solid var(--border-line);
 }
 
 form div.input input:focus,
@@ -333,7 +334,7 @@ div.story .details .role {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        gap: 0 1rem;
+        gap: .8rem 1rem;
     }
 
     form div.input {
@@ -449,7 +450,6 @@ div.story .details .role {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        gap: 0 1rem;
         width: calc(90% - 2.6rem);
         padding: 1.5rem 1.3rem;
         border: 1px solid var(--border-line);

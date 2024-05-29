@@ -17,9 +17,29 @@ const defaultErr = {
   email: "",
 };
 
+
+
 const Form = () => {
   const [formData, setFormData] = useState(defaultInputs);
   const [err, setErr] = useState(defaultErr);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const postData = async () => {
+      const data = {
+        title: title,
+        post: post,
+      };
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+      });
+      return response.json();
+    };
+    postData().then((data) => {
+      alert(data.message);
+    });
+  }
 
   const handleInputValidation = (inputName, inputValue) => {
     if (inputName === "firstName" || inputName === "lastName") {
@@ -79,7 +99,7 @@ const Form = () => {
 
   return (
     <>
-      <form action="#">
+      <form onSubmit={handleSubmit}>
         <div className={`${styles["input"]} input`}>
           <input
             type="text"
@@ -155,7 +175,7 @@ const Form = () => {
           />
           <label htmlFor="request">Describe your content needs</label>
         </div>
-        <button className={styles["submit"]}>SEND</button>
+        <button type="submit" className={styles["submit"]}>SEND</button>
       </form>
     </>
   );

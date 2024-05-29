@@ -86,7 +86,7 @@ button.active-tab {
     background-image: linear-gradient(180deg, var(--surface-1), var(--opaq-1));
 }
 
-.faq-sect.faq-container .faqs {
+.faqs {
     width: calc(100% - 3rem);
     padding: 1.5rem 1.5rem 2rem;
     border-radius: 1rem;
@@ -219,7 +219,7 @@ button.active-tab {
         background-image: linear-gradient(180deg, var(--surface-3), var(--surface-4));
     }
 
-    .faq-sect.faq-container .faqs {
+    .faqs {
         padding: 2rem 2rem 2rem;
     }
 }

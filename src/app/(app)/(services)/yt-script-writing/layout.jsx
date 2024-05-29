@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Blog",
-  description: "Stories that'll keep you up",
+  title: "Youtube Script-Writing",
+  description: "Our Audience-winning script",
 };
 
 export default function Layout({ children }) {

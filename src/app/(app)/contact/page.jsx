@@ -55,7 +55,7 @@ export default function Contact() {
       <section className={`${styles["contact-sect"]} ${styles["learn-more"]}`}>
         <h3>For a more personalized experience...</h3>
         <div className={styles["cards"]}>
-          <Link href={"./contact/yt-script-writing"} className={styles["card"]}>
+          <Link href={"./yt-script-writing"} className={styles["card"]}>
             <h2>Get to know our script-writing services</h2>
             <div>
               <p>Learn more</p>
@@ -108,7 +108,7 @@ export default function Contact() {
               </svg>
             </div>
           </Link>
-          <Link href={"./contact/yt-automation"} className={styles["card"]}>
+          <Link href={"./yt-automation"} className={styles["card"]}>
             <h2>Get to know our automation services</h2>
             <div>
               <p>Learn more</p>

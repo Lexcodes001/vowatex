@@ -1,0 +1,336 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main .unique-sect {
+    width: calc(100% - 4rem);
+    max-width: 600px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.unique-sect header {
+    width: fit-content;
+    position: relative;
+    align-self: left;
+    z-index: 1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-1);
+    text-align: left;
+    border-radius: .5rem;
+    margin: 3rem 0 1.5rem;
+    padding: .5rem 0;
+    line-height: 1.5rem;
+}
+
+.unique-sect header::after {
+    position: absolute;
+    content: '';
+    width: 3.5rem;
+    height: 4px;
+    background-color: var(--border-line);
+    bottom: -1rem;
+    left: 0;
+    border-radius: 1rem;
+}
+
+section.content {
+    padding: 2rem 2rem 2rem !important;
+    display: flex;
+    flex-direction: column;
+}
+
+div.specifics {
+    display: flex;
+    flex-direction: column;
+}
+
+:is(div.specifics, div.card) ul {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+:is(div.specifics, div.card) ul li {
+    color: var(--text-2);
+    font-size: .9rem;
+    position: relative;
+}
+
+:is(div.specifics, div.card) ul li::before {
+    position: absolute;
+    left: -2rem;
+    content: url(../../../../../public/assets/images/checked.svg);
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+div.specific-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--surface-1);
+}
+
+div.specific-form form {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem !important;
+}
+
+div.specific-form header {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+section.about p.intro {
+    font-size: .9rem;
+    color: var(--text-2);
+}
+
+div.services {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+div.services header {
+    font-size: 1.3rem;
+}
+
+div.services .flip-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+div.services .others {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+div.services .others p.que {
+    font-size: .7rem;
+    color: var(--text-2);
+}
+
+div.services .others a {
+    color: var(--surface-1);
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    padding: 1rem 0;
+    border-radius: .5rem;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(180deg, var(--opaq), var(--opaq)), url(../../../../../public/assets/images/gradient-3.webp);
+    transition: gap .2s ease;
+}
+
+div.services .others a:hover {
+    gap: .4rem;
+    color: var(--text-1);
+    background-image: linear-gradient(180deg, var(--opaq-1), var(--opaq-1)), url(../../../../../public/assets/images/gradient-3.webp);
+}
+
+div.services .others a:hover svg :where(line, polyline, path) {
+    stroke: var(--text-1);
+}
+
+section.cards {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cards .card {
+    width: 80%;
+    padding: 1.1rem 1.3rem;
+    border-radius: .5rem;
+    background-color: var(--surface-4);
+}
+
+.cards .card:nth-child(1) {
+    align-self: flex-start;
+}
+
+.cards .card:nth-child(2) {
+    align-self: flex-end;
+}
+
+@media only screen and (min-width: 600px) {
+    .main section.unique-sect {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .unique-sect header {
+        text-align: center;
+    }
+
+    .unique-sect header::after {
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    section.content {
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.specifics {
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.specifics ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.specific-form h3 {
+        text-align: center;
+    }
+
+    div.specific-form form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    section.specific-form form div.input:nth-child(5),
+    section.specific-form form div.input:nth-child(6) {
+        width: 100%;
+    }
+
+    section.about p.intro {
+        text-align: center;
+    }
+
+    .cards .card {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+
+    div.specific-form {
+        width: calc(80% - 4rem);
+        max-width: calc(80% - 4rem);
+        padding: 0 2rem 1.5rem;
+        border: 1px solid var(--border-line);
+        border-radius: .5rem;
+        background-image: linear-gradient(to right, var(--surface-2) 85%, var(--surface-4));
+    }
+
+    div.specific-form form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    div.specific-form form div.input {
+        width: 48% !important;
+        height: 5rem;
+    }
+
+    div.specific-form div.input:nth-child(5),
+    div.specific-form div.input:nth-child(6) {
+        width: 100%;
+    }
+
+    div.specific-form form div.input:nth-child(6) {
+        height: 9rem;
+        justify-content: flex-start;
+    }
+
+    div.specific-form form div.input:nth-child(6) input {
+        height: auto;
+        padding: 1.2rem 1rem 5rem 1.4rem;
+    }
+
+    section.about p.intro {
+        font-size: .9rem;
+        color: var(--text-2);
+    }
+
+    div.services {
+        width: 100%;
+        align-items: center;
+    }
+
+    div.services .flip-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    div.services .flip-cards p {
+        font-size: .6rem;
+        font-weight: 700;
+        line-height: 1rem;
+    }
+
+    div.services .others {
+        align-self: flex-start;
+    }
+
+    div.services .others a {
+        width: fit-content;
+        padding: 1rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .main section.unique-sect {
+        width: calc(90% - 6rem);
+        max-width: calc(90% - 6rem);
+    }
+
+    div.specific-form {
+        width: calc(70% - 4rem);
+        max-width: 500px;
+    }
+
+    div.services .flip-cards p {
+        font-size: .8rem;
+        font-weight: 600;
+        line-height: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .main section.unique-sect {
+        width: calc(80% - 6rem);
+        max-width: calc(80% - 6rem);
+    }
+
+    div.services .flip-cards p {
+        font-size: .9rem;
+    }
+}
