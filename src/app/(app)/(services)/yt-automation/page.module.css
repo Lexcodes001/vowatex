@@ -185,16 +185,6 @@ section.cards {
         align-items: center;
     }
 
-    .unique-sect header {
-        text-align: center;
-    }
-
-    .unique-sect header::after {
-        bottom: -1rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     section.content {
         justify-content: center;
         align-items: center;
@@ -228,56 +218,8 @@ section.cards {
         width: 100%;
     }
 
-    section.about p.intro {
-        text-align: center;
-    }
-
     .cards .card {
         width: 60%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-
-    div.specific-form {
-        width: calc(80% - 4rem);
-        max-width: calc(80% - 4rem);
-        padding: 0 2rem 1.5rem;
-        border: 1px solid var(--border-line);
-        border-radius: .5rem;
-        background-image: linear-gradient(to right, var(--surface-2) 85%, var(--surface-4));
-    }
-
-    div.specific-form form {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-
-    div.specific-form form div.input {
-        width: 48% !important;
-        height: 5rem;
-    }
-
-    div.specific-form div.input:nth-child(5),
-    div.specific-form div.input:nth-child(6) {
-        width: 100%;
-    }
-
-    div.specific-form form div.input:nth-child(6) {
-        height: 9rem;
-        justify-content: flex-start;
-    }
-
-    div.specific-form form div.input:nth-child(6) input {
-        height: auto;
-        padding: 1.2rem 1rem 5rem 1.4rem;
-    }
-
-    section.about p.intro {
-        font-size: .9rem;
-        color: var(--text-2);
     }
 
     div.services {
@@ -299,6 +241,60 @@ section.cards {
     div.services .others {
         align-self: flex-start;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    .unique-sect header {
+        text-align: center;
+    }
+
+    .unique-sect header::after {
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.specific-form {
+        width: calc(90% - 4rem);
+        max-width: calc(90% - 4rem);
+        padding: 0 2rem 1.5rem;
+        border: 1px solid var(--border-line);
+        border-radius: .5rem;
+        background-image: linear-gradient(to right, var(--surface-2) 85%, var(--surface-4));
+    }
+
+    div.specific-form form {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    form div.input {
+        width: 48% !important;
+        height: 5rem;
+    }
+
+    div.input:nth-child(5),
+    div.input:nth-child(6) {
+        width: 100%;
+    }
+
+    form div.input:nth-child(6) {
+        height: 9rem;
+        justify-content: flex-start;
+    }
+
+    form div.input:nth-child(6) input {
+        height: auto;
+        padding: 1.2rem 1rem 5rem 1.4rem;
+    }
+
+    section.about p.intro {
+        font-size: .9rem;
+        color: var(--text-2);
+        text-align: center;
+    }
 
     div.services .others a {
         width: fit-content;
@@ -313,8 +309,8 @@ section.cards {
     }
 
     div.specific-form {
-        width: calc(70% - 4rem);
-        max-width: 500px;
+        width: calc(80% - 4rem);
+        max-width: 700px;
     }
 
     div.services .flip-cards p {

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   About,
   Links,
@@ -10,6 +11,7 @@ import styles from "./page.module.css";
 import Logo from "@/images/logo.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Variants } from "@/lib/variants";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -29,49 +31,150 @@ export default function Footer() {
       <main>
         <div className={styles["top"]}>
           <div className={styles["about"]}>
-            <div className={styles["box"]}>
+            <motion.div
+              variants={Variants}
+              initial="rightFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+                staggerChildren: 0.5,
+              }}
+              className={styles["box"]}
+            >
               <Image src={Logo} alt="Vowatex" />
               <header>Vowatex.</header>
-            </div>
-            <p>
+            </motion.div>
+            <motion.p
+              variants={Variants}
+              initial="leftFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+                staggerChildren: 0.5,
+              }}
+            >
               Vowatex specializes in crafting captivating YouTube scripts and
               automation strategies tailored to your brand&apos;s storytelling
               prowess and audience engagement goals. Partner with us to command
               success on your YouTube journey.
-            </p>
+            </motion.p>
           </div>
           <div className={styles["links"]}>
             <section>
-              <header>VOWATEX</header>
-              <div>
+              <motion.header
+                variants={Variants}
+                initial="rightFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
+                VOWATEX
+              </motion.header>
+              <motion.div
+                variants={Variants}
+                initial="leftFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
                 {Links.map((item) => (
                   <Link
                     href={item.url}
                     key={item.id}
                     className={`${pathname === item.url ? styles.active : ""}`}
                   >
-                    {item.name}
+                    <motion.p
+                      variants={Variants}
+                      initial="leftFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        staggerChildren: 0.5,
+                      }}
+                    >
+                      {item.name}
+                    </motion.p>
                   </Link>
                 ))}
-              </div>
+              </motion.div>
             </section>
             <section>
-              <header>ABOUT</header>
-              <div>
+              <motion.header
+                variants={Variants}
+                initial="rightFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
+                ABOUT
+              </motion.header>
+              <motion.div
+                variants={Variants}
+                initial="leftFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
                 {About.map((item) => (
                   <Link
                     href={item.url}
                     key={item.id}
                     className={`${pathname === item.url ? styles.active : ""}`}
                   >
-                    <p>{item.name}</p>
+                    <motion.p
+                      variants={Variants}
+                      initial="leftFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        staggerChildren: 0.5,
+                      }}
+                    >
+                      {item.name}
+                    </motion.p>
                   </Link>
                 ))}
-              </div>
+              </motion.div>
             </section>
             <section className={styles["socials"]}>
-              <header>SOCIALS</header>
-              <div>
+              <motion.header
+                variants={Variants}
+                initial="rightFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
+                SOCIALS
+              </motion.header>
+              <motion.div
+                variants={Variants}
+                initial="leftFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                  staggerChildren: 0.5,
+                }}
+              >
                 {Socials.map((item) => (
                   <Link
                     href={item.url}
@@ -79,14 +182,35 @@ export default function Footer() {
                     className={`${pathname === item.url ? styles.active : ""}`}
                   >
                     {item.icon}
-                    <p>{item.name}</p>
+                    <motion.p
+                      variants={Variants}
+                      initial="leftFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        staggerChildren: 0.5,
+                      }}
+                    >
+                      {item.name}
+                    </motion.p>
                   </Link>
                 ))}
-              </div>
+              </motion.div>
             </section>
           </div>
         </div>
-        <div className={styles["bottom"]}>
+        <motion.div
+          variants={Variants}
+          initial="bottomFade"
+          whileInView="center"
+          transition={{
+            duration: 0.8,
+            easings: "easeOut",
+            type: 'tween',
+          }}
+          className={styles["bottom"]}
+        >
           <div className={styles["other-links"]}>
             {OtherLinks.map((item) => (
               <Link
@@ -101,7 +225,7 @@ export default function Footer() {
           <div className={styles["attribution"]}>
             <p>Copyright 2024 © Vowatex Content.</p>
           </div>
-        </div>
+        </motion.div>
       </main>
     </footer>
   );

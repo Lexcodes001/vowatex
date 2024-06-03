@@ -21,6 +21,7 @@ export default function AnimatedText({
   className,
   once,
   repeatDelay,
+  speed,
   animation = defaultAnimations,
 }) {
   const controls = useAnimation();
@@ -52,7 +53,6 @@ export default function AnimatedText({
   }, [isInView, key]);
 
   useEffect(() => {
-    console.log(text);
     setKey((prevKey) => prevKey + 1); // Increment the key to force a re-render
   }, [text]);
 
@@ -64,7 +64,7 @@ export default function AnimatedText({
         initial="hidden"
         animate={controls}
         variants={{
-          visible: { transition: { staggerChildren: 0.1 } },
+          visible: { transition: { staggerChildren: speed ? speed : 0.1 } },
           hidden: {},
         }}
         aria-hidden

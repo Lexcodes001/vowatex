@@ -10,17 +10,16 @@ export default function UserReq({
   url = "https://neorepo.com",
   host = "neorepo.com",
 }) {
-  const escapedHost = host.replace(/\./g, "&#8203;.");
 
   return (
     <Html>
       <Head />
-      <Preview>{`Sign in to ${escapedHost}`}</Preview>
+      <Preview>{`New Request`}</Preview>
       <Section style={main}>
         <Container style={container}>
-          <Text style={h1}>Sign in to {escapedHost}</Text>
+          <Text style={h1}>New request from a client</Text>
           <Section style={{ textAlign: "center" }}>
-            <Button pX={20} pY={12} style={btn} href={url}>
+            <Button style={btn} href={url}>
               Sign in
             </Button>
             <Text style={text}>
@@ -66,6 +65,8 @@ const text = {
 };
 
 const btn = {
+  width: "5rem",
+  height: "2.5rem",
   backgroundColor: "#000",
   borderRadius: "5px",
   color: "#fff",

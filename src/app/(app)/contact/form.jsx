@@ -1,6 +1,8 @@
-'use client';
+"use client";
 import styles from "./page.module.css";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Variants } from "@/lib/variants";
 
 const defaultInputs = {
   firstName: "",
@@ -16,8 +18,6 @@ const defaultErr = {
   lastName: "",
   email: "",
 };
-
-
 
 const Form = () => {
   const [formData, setFormData] = useState(defaultInputs);
@@ -100,7 +100,17 @@ const Form = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className={`${styles["input"]} input`}>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="text"
             name="firstName"
@@ -113,8 +123,18 @@ const Form = () => {
           />
           <label htmlFor="firstName">First Name</label>
           <span className={styles["err"]}>{err.firstName}</span>
-        </div>
-        <div className={`${styles["input"]} input`}>
+        </motion.div>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="text"
             name="lastName"
@@ -127,8 +147,18 @@ const Form = () => {
           />
           <label htmlFor="lastName">Last Name</label>
           <span className={styles["err"]}>{err.lastName}</span>
-        </div>
-        <div className={`${styles["input"]} input`}>
+        </motion.div>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="email"
             name="email"
@@ -141,8 +171,18 @@ const Form = () => {
           />
           <label htmlFor="email">Email address</label>
           <span className={styles["err"]}>{err.email}</span>
-        </div>
-        <div className={`${styles["input"]} input`}>
+        </motion.div>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="tel"
             name="tel"
@@ -152,8 +192,18 @@ const Form = () => {
             onChange={handleChange}
           />
           <label htmlFor="tel">Phone number</label>
-        </div>
-        <div className={`${styles["input"]} input`}>
+        </motion.div>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="text"
             name="channel"
@@ -163,8 +213,18 @@ const Form = () => {
             onChange={handleChange}
           />
           <label htmlFor="channel">Youtube Channel</label>
-        </div>
-        <div className={`${styles["input"]} input`}>
+        </motion.div>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={`${styles["input"]} input`}
+        >
           <input
             type="text"
             name="request"
@@ -174,8 +234,10 @@ const Form = () => {
             onChange={handleChange}
           />
           <label htmlFor="request">Describe your content needs</label>
-        </div>
-        <button type="submit" className={styles["submit"]}>SEND</button>
+        </motion.div>
+        <button type="submit" className={styles["submit"]}>
+          SEND
+        </button>
       </form>
     </>
   );

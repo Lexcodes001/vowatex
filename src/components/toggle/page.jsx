@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "@/contexts/theme";
+import { Variants } from "@/lib/variants";
 
 const variants = {
   center: {
@@ -68,6 +69,7 @@ const Toggle = () => {
       <motion.div className={styles["relative"]}>
         <motion.button
           initial={{ rotate: 0 }}
+          whileTap={{ scale: 0.8 }}
           animate={isOpen ? { rotate: 45 } : { rotate: 0 }}
           exit={{ rotate: 0 }}
           onClick={() => {
@@ -92,9 +94,11 @@ const Toggle = () => {
               onClick={() => {
                 setIsOpen(false);
               }}
-              initial="scaleFade"
+              custom={-1}
+              variants={Variants}
+              initial="fade"
               animate="center"
-              exit="scaleFade"
+              exit="fade"
               className={styles["overlay"]}
             ></motion.div>
           )}
@@ -138,6 +142,14 @@ const Toggle = () => {
                   title="light theme"
                   onClick={() => {
                     changeTheme("light");
+                  }}
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
                   }}
                   className={`${mode === "light" ? styles.active : ""}`}
                 >
@@ -187,6 +199,14 @@ const Toggle = () => {
                   onClick={() => {
                     changeTheme("default");
                   }}
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
+                  }}
                   className={`${mode === "default" ? styles.active : ""}`}
                 >
                   <motion.svg
@@ -206,6 +226,14 @@ const Toggle = () => {
                   title="dark theme"
                   onClick={() => {
                     changeTheme("dark");
+                  }}
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
                   }}
                   className={`${mode === "dark" ? styles.active : ""}`}
                 >
@@ -233,6 +261,14 @@ const Toggle = () => {
                   onClick={() => {
                     scrollToTop();
                   }}
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
+                  }}
                 >
                   <motion.p>Scroll to top</motion.p>
                   <motion.svg
@@ -241,7 +277,7 @@ const Toggle = () => {
                     x="0px"
                     y="0px"
                     viewBox="0 0 24 30"
-                    enable-background="new 0 0 24 24"
+                    enableBackground="new 0 0 24 24"
                   >
                     <path d="M12,2C6.4858398,2,2,6.4858398,2,12s4.4858398,10,10,10c5.5136719,0,10-4.4858398,10-10S17.5136719,2,12,2z M12,20  c-4.4111328,0-8-3.5888672-8-8s3.5888672-8,8-8s8,3.5888672,8,8S16.4111328,20,12,20z M15.7070313,9.2929688  c0.390625,0.390625,0.390625,1.0234375,0,1.4140625C15.5117188,10.9023438,15.2558594,11,15,11  s-0.5117188-0.0976563-0.7070313-0.2929688L13,9.4140625V17c0,0.5522461-0.4477539,1-1,1s-1-0.4477539-1-1V9.4140625  l-1.2929688,1.2929688c-0.390625,0.390625-1.0234375,0.390625-1.4140625,0s-0.390625-1.0234375,0-1.4140625l3-3  c0.390625-0.390625,1.0234375-0.390625,1.4140625,0L15.7070313,9.2929688z" />
                   </motion.svg>

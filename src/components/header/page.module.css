@@ -1,0 +1,49 @@
+.header {
+    width: fit-content;
+    position: relative;
+    align-self: left;
+    z-index: 1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: var(--text-1);
+    text-align: left;
+    border-radius: .5rem;
+    margin: 3rem 0 1.5rem;
+    padding: .5rem 0;
+}
+
+.header::after {
+    position: absolute;
+    content: '';
+    width: 3.5rem;
+    height: 4px;
+    background-color: var(--border-line);
+    bottom: -1rem;
+    left: 0;
+    border-radius: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        align-self: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-1);
+        text-align: center;
+        margin: 3rem 0 1.5rem;
+        padding: .5rem 0;
+    }
+
+    .header::after {
+        position: absolute;
+        content: '';
+        width: 3.5rem;
+        height: 4px;
+        background-color: var(--border-line);
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 1rem;
+    }
+}

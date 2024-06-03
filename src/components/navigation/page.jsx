@@ -1,5 +1,7 @@
 "use client";
 import Hamburger from "hamburger-react";
+import AnimatedText from "@/components/framer/text-animation";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { Links } from "./constants";
@@ -7,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "@/images/logo.svg";
 import Link from "next/link";
+import { Variants } from "@/lib/variants";
 
 // function useSticky() {
 //   const ref = useRef(null);
@@ -53,12 +56,36 @@ export default function Navigation() {
       `}
     >
       <div className={styles.navbar}>
-        <div className={styles["box"]}>
+        <motion.div
+          variants={Variants}
+          custom={20}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={styles["box"]}
+        >
           <Image src={Logo} alt="Vowatex" />
-          <header>Vowatex.</header>
-        </div>
+          <header>
+            <AnimatedText speed={0.3} text={"Vowatex."} once />
+          </header>
+        </motion.div>
         <div className={styles["sm"]}>
-          <span className={`${styles["toggle"]} ${isOpen && styles.isOpen}`}>
+          <motion.span
+            variants={Variants}
+            custom={20}
+            initial="scaleFade"
+            whileInView="center"
+            transition={{
+              duration: 1,
+              easings: "easeOut",
+              staggerChildren: 0.5,
+            }}
+            className={`${styles["toggle"]} ${isOpen && styles.isOpen}`}
+          >
             <Hamburger
               size={20}
               distance="sm"
@@ -67,7 +94,7 @@ export default function Navigation() {
               color={"var(--text-2)"}
               toggle={() => setIsOpen((isOpen) => !isOpen)}
             />
-          </span>
+          </motion.span>
         </div>
         <div className={styles["lg"]}>
           <div className={styles.links}>
@@ -77,18 +104,60 @@ export default function Navigation() {
                 key={item.id}
                 className={`${pathname === item.url ? styles.active : ""}`}
               >
-                <span>{item.icon}</span>
-                <p>{item.name}</p>
+                <motion.span
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 1,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
+                  }}
+                >
+                  {item.icon}
+                </motion.span>
+                <motion.p
+                  variants={Variants}
+                  initial="leftFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    staggerChildren: 0.5,
+                  }}
+                >
+                  {item.name}
+                </motion.p>
               </Link>
             ))}
           </div>
         </div>
       </div>
       {isOpen && (
-        <div className={styles.sidemenu}>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={styles.sidemenu}
+        >
           <div className={styles["content"]}>
             <div className={styles.links}>
-              <header>Quick Links</header>
+              <motion.header
+                variants={Variants}
+                initial="leftFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                }}
+              >
+                Quick Links
+              </motion.header>
               {Links.map((item) => (
                 <Link
                   onClick={() => {
@@ -98,13 +167,35 @@ export default function Navigation() {
                   key={item.id}
                   className={`${pathname === item.url ? styles.active : ""}`}
                 >
-                  <span>{item.icon}</span>
-                  <p>{item.name}</p>
+                  <motion.span
+                    variants={Variants}
+                    initial="scaleFade"
+                    whileInView="center"
+                    transition={{
+                      duration: 1,
+                      easings: "easeOut",
+                      staggerChildren: 0.5,
+                    }}
+                  >
+                    {item.icon}
+                  </motion.span>
+                  <motion.p
+                    variants={Variants}
+                    initial="leftFade"
+                    whileInView="center"
+                    transition={{
+                      duration: 0.5,
+                      easings: "easeOut",
+                      staggerChildren: 0.5,
+                    }}
+                  >
+                    {item.name}
+                  </motion.p>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
