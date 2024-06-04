@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Overview from "@/components/overview/page";
 import Reviews from "@/components/reviews/page";
 import Form from "./form";
@@ -7,6 +9,8 @@ import Link from "next/link";
 import Access from "@/images/access.webp";
 import Dynamic from "@/images/dynamic.webp";
 import Scalable from "@/images/scalable.webp";
+import Header from "@/components/header/header";
+import { Variants } from "@/lib/variants";
 
 export default function Contact() {
   return (
@@ -19,46 +23,100 @@ export default function Contact() {
       />
 
       <section className={`${styles["contact-sect"]} ${styles["form-box"]}`}>
-        <header>Let&apos;s Discuss Your Channel&apos;s Content Goals</header>
+        <Header>Let&apos;s Discuss Your Channel&apos;s Content Goals</Header>
         <Form />
       </section>
 
       <section className={`${styles["contact-sect"]} ${styles["about"]}`}>
-        <header>
+        <Header>
           Crafting Captivating Stories, Automating Success on YouTube
-        </header>
+        </Header>
         <article>
-          <span>
+          <motion.span
+            variants={Variants}
+            initial="scaleFade"
+            whileInView="center"
+            transition={{
+              duration: 0.5,
+              easings: "easeOut",
+              staggerChildren: 0.5,
+            }}
+          >
             <Image src={Dynamic} alt="dynamic" />
             <p>
               Dynamic YouTube scripts designed to captivate your audience and
               keep viewers engaged to your channel.
             </p>
-          </span>
-          <span>
+          </motion.span>
+          <motion.span
+            variants={Variants}
+            initial="scaleFade"
+            whileInView="center"
+            transition={{
+              duration: 0.5,
+              easings: "easeOut",
+              staggerChildren: 0.5,
+            }}
+          >
             <Image src={Scalable} alt="scalable" />
             <p>
               Our scalable platform streamlines the content creation process,
               allowing you to order compelling scripts with just a few clicks.
             </p>
-          </span>
-          <span>
+          </motion.span>
+          <motion.span
+            variants={Variants}
+            initial="scaleFade"
+            whileInView="center"
+            transition={{
+              duration: 0.5,
+              easings: "easeOut",
+              staggerChildren: 0.5,
+            }}
+          >
             <Image src={Access} alt="access" />
             <p>
               Gain access to our industry-leading team ensuring cutting-edge
               automation solutions optimize workflows for efficiency.
             </p>
-          </span>
+          </motion.span>
         </article>
       </section>
 
       <section className={`${styles["contact-sect"]} ${styles["learn-more"]}`}>
-        <h3>For a more personalized experience...</h3>
+        <motion.h3
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+        >
+          For a more personalized experience...
+        </motion.h3>
         <div className={styles["cards"]}>
           <Link href={"./yt-script-writing"} className={styles["card"]}>
-            <h2>Get to know our script-writing services</h2>
+            <motion.h2
+            variants={Variants}
+              initial="topFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+              }}
+            >Get to know our script-writing services</motion.h2>
             <div>
-              <p>Learn more</p>
+              <motion.p
+              variants={Variants}
+              initial="topFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+              }}
+              >Learn more</motion.p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="var(--brand)"
@@ -109,9 +167,25 @@ export default function Contact() {
             </div>
           </Link>
           <Link href={"./yt-automation"} className={styles["card"]}>
-            <h2>Get to know our automation services</h2>
+            <motion.h2
+            variants={Variants}
+              initial="topFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+              }}
+            >Get to know our automation services</motion.h2>
             <div>
-              <p>Learn more</p>
+              <motion.p
+              variants={Variants}
+              initial="bottomFade"
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+              }}
+              >Learn more</motion.p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="var(--brand)"

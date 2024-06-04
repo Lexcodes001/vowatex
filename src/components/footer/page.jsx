@@ -76,9 +76,6 @@ export default function Footer() {
                 VOWATEX
               </motion.header>
               <motion.div
-                variants={Variants}
-                initial="leftFade"
-                whileInView="center"
                 transition={{
                   duration: 0.5,
                   easings: "easeOut",
@@ -121,9 +118,6 @@ export default function Footer() {
                 ABOUT
               </motion.header>
               <motion.div
-                variants={Variants}
-                initial="leftFade"
-                whileInView="center"
                 transition={{
                   duration: 0.5,
                   easings: "easeOut",
@@ -184,7 +178,7 @@ export default function Footer() {
                     {item.icon}
                     <motion.p
                       variants={Variants}
-                      initial="leftFade"
+                      initial="rightFade"
                       whileInView="center"
                       transition={{
                         duration: 0.5,

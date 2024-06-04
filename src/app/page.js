@@ -25,7 +25,6 @@ import ParallaxText from "@/components/framer/parallax-text";
 import Values from "./(app)/about/values";
 import { Variants } from "@/lib/variants";
 import Header from "@/components/header/header";
-import Loader from "./loading";
 
 const solutions = [
   {

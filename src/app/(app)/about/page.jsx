@@ -1,7 +1,22 @@
+"use client";
 import Overview from "@/components/overview/page";
 import ContactPip from "../contact/cip";
 import styles from "./page.module.css";
 import Values from "./values";
+import { motion } from "framer-motion";
+import Header from "@/components/header/header";
+import { Variants } from "@/lib/variants";
+import AnimatedText from "@/components/framer/text-animation";
+
+const storyParagraphs = [
+  "Like many great ideas, Vowatex was born out of a personal struggle. Back in 2013, our founder, Emily, was trying to grow her small business&apos;s online presence through YouTube videos. She quickly realized that creating engaging scripts and automating the video.",
+  "Determined to find a solution, Emily began honing her scriptwriting skills and experimenting with automation tools.",
+  "What started as a passion project soon turned into a full-fledged obsession, as she discovered the incredible power of well-crafted YouTube content and streamlined workflows.",
+  "Joined by a small team of like-minded creatives, Emily's little side hustle blossomed into Vowatex – a company dedicated to helping businesses and individuals alike unlock the full potential of YouTube through expertly written scripts and cutting-edge automation.",
+  "From our humble beginnings in a cozy WeWork office, we've grown into a tight-knit team of storytellers, tech enthusiasts, and problem-solvers, united by a common goal: to make YouTube content creation accessible, efficient, and truly impactful.",
+  "Today, Vowatex is more than just a service provider; we're a community of passionate individuals who believe in the transformative power of great stories and innovative automation solutions. Whether you're a solopreneur, a small business owner, or a multinational corporation, we're here to help you captivate your audience and streamline your YouTube journey.",
+  "At Vowatex, we don't just write scripts – we craft narratives that resonate, inspire, and leave a lasting impression. Join us on this exciting adventure, and let's redefine what&apos;s possible on YouTube, one captivating story at a time.",
+];
 
 export default function About() {
   return (
@@ -12,28 +27,44 @@ export default function About() {
           "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
         }
       />
-      <section className={`${styles['about-sect']} ${styles["mission"]}`}>
-        <h2>
+      <section className={`${styles["about-sect"]} ${styles["mission"]}`}>
+        <motion.h2
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{ duration: 1, easings: "easeOut" }}
+        >
           Vowatex places YouTube script writing and automation at the core of
           your brand&apos;s growth strategy
-        </h2>
-        <p>
+        </motion.h2>
+        <motion.p
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{ duration: 1, easings: "easeOut" }}
+        >
           Our unwavering mission is to bridge the gap between businesses and
           their target audiences through compelling YouTube scripts meticulously
           crafted by our specialized writers, overseen by a team that
           prioritizes human connection and personalized experiences.
-        </p>
+        </motion.p>
       </section>
-      <section className={`${styles['about-sect']} ${styles["values"]}`}>
-        <header>Our Values</header>
-        <p className={styles["intro"]}>
+      <section className={`${styles["about-sect"]} ${styles["values"]}`}>
+        <Header>Our Values</Header>
+        <motion.p
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{ duration: 1, easings: "easeOut" }}
+          className={styles["intro"]}
+        >
           At Vowatex, these seven values guide our actions, ensuring that every
           project we undertake is a testament to our commitment to excellence in
           YouTube script writing and automation.
-        </p>
+        </motion.p>
         <Values />
       </section>
-      <section className={`${styles['about-sect']} ${styles["story"]}`}>
+      <section className={`${styles["about-sect"]} ${styles["story"]}`}>
         <svg
           className={`${styles["story-wave"]} ${styles.one}`}
           style={{ transform: "rotate(180deg)", transition: 0.3 }}
@@ -48,44 +79,24 @@ export default function About() {
           ></path>
         </svg>
         <div className={styles["box"]}>
-          <header>Our Story</header>
-          <p>
-            Like many great ideas, Vowatex was born out of a personal struggle.
-            Back in 2013, our founder, Emily, was trying to grow her small
-            business&apos;s online presence through YouTube videos. She quickly
-            realized that creating engaging scripts and automating the video
-            production process was a massive challenge. <br />
-            <br />
-            Determined to find a solution, Emily began honing her scriptwriting
-            skills and experimenting with automation tools. <br />
-            <br />
-            What started as a passion project soon turned into a full-fledged
-            obsession, as she discovered the incredible power of well-crafted
-            YouTube content and streamlined workflows. <br />
-            <br />
-            Joined by a small team of like-minded creatives, Emily&apos;s little
-            side hustle blossomed into Vowatex – a company dedicated to helping
-            businesses and individuals alike unlock the full potential of
-            YouTube through expertly written scripts and cutting-edge
-            automation. <br />
-            <br />
-            From our humble beginnings in a cozy WeWork office, we&apos;ve grown
-            into a tight-knit team of storytellers, tech enthusiasts, and
-            problem-solvers, united by a common goal: to make YouTube content
-            creation accessible, efficient, and truly impactful. <br />
-            <br />
-            Today, Vowatex is more than just a service provider; we&apos;re a
-            community of passionate individuals who believe in the
-            transformative power of great stories and innovative automation
-            solutions. Whether you&apos;re a solopreneur, a small business
-            owner, or a multinational corporation, we&apos;re here to help you
-            captivate your audience and streamline your YouTube journey. <br />
-            <br />
-            At Vowatex, we don&apos;t just write scripts – we craft narratives
-            that resonate, inspire, and leave a lasting impression. Join us on
-            this exciting adventure, and let&apos;s redefine what&apos;s
-            possible on YouTube, one captivating story at a time.
-          </p>
+          <Header>Our Story</Header>
+          {storyParagraphs.map((text, index) => (
+            <motion.p
+              variants={Variants}
+              initial={`${index % 2 === 0 ? 'leftFade' : 'rightFade'}`}
+              whileInView="center"
+              transition={{
+                duration: 0.5,
+                easings: "easeOut",
+                staggerChildren: 0.5,
+              }}
+              key={text}
+            >
+              {text}
+              <br />
+            </motion.p>
+          ))}
+          <br />
         </div>
         <svg
           className={`${styles["story-wave"]} ${styles.two}`}

@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 import { faqCategories } from "./constants";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Header from "@/components/header/header";
+import { Variants } from "@/lib/variants";
 
 const variants = {
   center: {
@@ -59,17 +61,32 @@ export default function Faq() {
         }
       />
       <section className={`${styles["faq-sect"]} ${styles["header"]}`}>
-        <header>Frequently asked questions</header>
-        <p>
+        <Header>Frequently asked questions</Header>
+        <motion.p
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{ duration: 1, easings: "easeOut" }}
+        >
           We collaborate with remarkable individuals who excel in the art of
           crafting captivating content
-        </p>
+        </motion.p>
       </section>
 
       <section className={`${styles["faq-sect"]} ${styles["faq-container"]}`}>
-        <div className={styles["nav-tab"]}>
+        <motion.div
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{ duration: 1, easings: "easeOut" }}
+          className={styles["nav-tab"]}
+        >
           {faqCategories.map((category, index) => (
-            <button
+            <motion.button
+              variants={Variants}
+              initial="rightFade"
+              whileInView="center"
+              transition={{ duration: 1, easings: "easeOut" }}
               key={category.category}
               onClick={() => {
                 handleTabToggle(index);
@@ -79,13 +96,17 @@ export default function Faq() {
               }`}
             >
               {category.category}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         <div className={styles["faqs"]}>
           {faqCategories[currentIndex].faqs.map((faq) => (
             <motion.div
+              variants={Variants}
+              initial="top\  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Fade"
+              whileInView="center"
+              transition={{ duration: 1, easings: "easeOut" }}
               key={faq.question}
               className={`${styles["box"]} ${
                 activeId === faq.id && styles.active
