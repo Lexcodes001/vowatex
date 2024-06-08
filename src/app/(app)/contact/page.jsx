@@ -17,9 +17,7 @@ export default function Contact() {
     <main className={styles.main}>
       <Overview
         header={"CONTACT US"}
-        tagline={
-          "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
-        }
+        tagline={"Closer than before: Connect with Us to Unleash Your YouTube Potential"}
       />
 
       <section className={`${styles["contact-sect"]} ${styles["form-box"]}`}>
@@ -99,16 +97,6 @@ export default function Contact() {
         <div className={styles["cards"]}>
           <Link href={"./yt-script-writing"} className={styles["card"]}>
             <motion.h2
-            variants={Variants}
-              initial="topFade"
-              whileInView="center"
-              transition={{
-                duration: 0.5,
-                easings: "easeOut",
-              }}
-            >Get to know our script-writing services</motion.h2>
-            <div>
-              <motion.p
               variants={Variants}
               initial="topFade"
               whileInView="center"
@@ -116,7 +104,21 @@ export default function Contact() {
                 duration: 0.5,
                 easings: "easeOut",
               }}
-              >Learn more</motion.p>
+            >
+              Get to know our script-writing services
+            </motion.h2>
+            <div>
+              <motion.p
+                variants={Variants}
+                initial="topFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                }}
+              >
+                Learn more
+              </motion.p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="var(--brand)"
@@ -127,19 +129,19 @@ export default function Contact() {
                 <path
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M6.5,20.5v-5c0-3.3,2.7-6,6-6h10"
                 />
                 <path
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M38.5,25.5v10c0,3.3-2.7,6-6,6h-20c-3.3,0-6-2.7-6-6v-7"
                 />
                 <line
@@ -149,18 +151,18 @@ export default function Contact() {
                   y2="6.5"
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                 />
                 <polyline
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   points="27.5,6.5 41.5,6.5 41.5,20.5"
                 />
               </svg>
@@ -168,24 +170,28 @@ export default function Contact() {
           </Link>
           <Link href={"./yt-automation"} className={styles["card"]}>
             <motion.h2
-            variants={Variants}
+              variants={Variants}
               initial="topFade"
               whileInView="center"
               transition={{
                 duration: 0.5,
                 easings: "easeOut",
               }}
-            >Get to know our automation services</motion.h2>
+            >
+              Get to know our automation services
+            </motion.h2>
             <div>
               <motion.p
-              variants={Variants}
-              initial="bottomFade"
-              whileInView="center"
-              transition={{
-                duration: 0.5,
-                easings: "easeOut",
-              }}
-              >Learn more</motion.p>
+                variants={Variants}
+                initial="bottomFade"
+                whileInView="center"
+                transition={{
+                  duration: 0.5,
+                  easings: "easeOut",
+                }}
+              >
+                Learn more
+              </motion.p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="var(--brand)"
@@ -196,19 +202,19 @@ export default function Contact() {
                 <path
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M6.5,20.5v-5c0-3.3,2.7-6,6-6h10"
                 />
                 <path
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M38.5,25.5v10c0,3.3-2.7,6-6,6h-20c-3.3,0-6-2.7-6-6v-7"
                 />
                 <line
@@ -218,18 +224,18 @@ export default function Contact() {
                   y2="6.5"
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                 />
                 <polyline
                   fill="none"
                   stroke="var(--brand)"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   points="27.5,6.5 41.5,6.5 41.5,20.5"
                 />
               </svg>

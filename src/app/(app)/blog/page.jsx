@@ -8,7 +8,9 @@ export default function Blog() {
     <main className={styles.main}>
       <Overview
         header={"OUR BLOG"}
-        tagline={"Coming soon!"}
+        tagline={
+          "Insights and Inspiration for Conquering YouTube with Engaging Content and Seamless Automation"
+        }
       />
 
       <section

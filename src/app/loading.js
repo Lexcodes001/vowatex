@@ -15,7 +15,7 @@ const Loader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * textArray.length);
-      setText(textArray[randomIndex]);
+      setText(colorArray[randomIndex]);
     }, 1000);
 
     return () => clearInterval(interval); // Clean up interval on component unmount

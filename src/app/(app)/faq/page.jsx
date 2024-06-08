@@ -8,35 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/header/header";
 import { Variants } from "@/lib/variants";
 
-const variants = {
-  center: {
-    x: 0,
-    y: 0,
-    opacity: 1,
-    scale: 1,
-  },
-  topFade: {
-    y: 100,
-    opacity: 0,
-  },
-  bottomFade: {
-    y: -100,
-    opacity: 0,
-  },
-  leftFade: {
-    x: -50,
-    opacity: 0,
-  },
-  rightFade: {
-    x: 50,
-    opacity: 0,
-  },
-  scaleFade: {
-    scale: 0.7,
-    opacity: 0,
-  },
-};
-
 export default function Faq() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeId, setActiveId] = useState(0);
@@ -57,7 +28,7 @@ export default function Faq() {
       <Overview
         header={"FAQs'"}
         tagline={
-          "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
+          "Your Questions Answered: Frequently Asked Questions about Our Services"
         }
       />
       <section className={`${styles["faq-sect"]} ${styles["header"]}`}>
@@ -104,7 +75,7 @@ export default function Faq() {
           {faqCategories[currentIndex].faqs.map((faq) => (
             <motion.div
               variants={Variants}
-              initial="top\  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Fade"
+              initial="topFade"
               whileInView="center"
               transition={{ duration: 1, easings: "easeOut" }}
               key={faq.question}

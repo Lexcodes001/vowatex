@@ -23,9 +23,7 @@ export default function About() {
     <main className={styles.main}>
       <Overview
         header={"ABOUT US"}
-        tagline={
-          "We collaborate with remarkable individuals who excel in the art of crafting captivating content"
-        }
+        tagline={"Discover the Vowatex Story: Empowering Brands on YouTube"}
       />
       <section className={`${styles["about-sect"]} ${styles["mission"]}`}>
         <motion.h2
@@ -83,7 +81,7 @@ export default function About() {
           {storyParagraphs.map((text, index) => (
             <motion.p
               variants={Variants}
-              initial={`${index % 2 === 0 ? 'leftFade' : 'rightFade'}`}
+              initial={`${index % 2 === 0 ? "leftFade" : "rightFade"}`}
               whileInView="center"
               transition={{
                 duration: 0.5,
