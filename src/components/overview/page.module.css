@@ -3,7 +3,7 @@ section.overview {
     max-width: 600px;
     padding: 4.5rem 2rem 0;
     margin: auto;
-    height: 35dvh;
+    height: calc(35dvh);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,9 +18,40 @@ section.overview {
     overflow: hidden;
 }
 
+section.custom{
+    padding: 2rem 2rem 0;
+    height: calc(45dvh);
+    background-image: linear-gradient(180deg, var(--opaq), var(--opaq)), linear-gradient(180deg, var(--opaq-1), var(--opaq)), linear-gradient(180deg, var(--opaq-1), transparent);
+}
+
 section.overview img{
     position: absolute;
     z-index: -1;
+}
+
+.overview .history{
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+.overview .history span{
+    display: flex;
+}
+
+.overview .history .paths{
+    gap: .2rem;
+}
+
+.overview .history .paths a{
+    color: var(--text-2);
+    font-size: .6rem;
+    font-family: var(--montserrat-italic);
+}
+.overview .history .paths :is(a:nth-child(2), a:hover){
+    color: var(--brand);
+    font-weight: 700;
 }
 
 section.overview header {

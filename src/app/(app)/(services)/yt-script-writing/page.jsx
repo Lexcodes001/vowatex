@@ -138,8 +138,8 @@ const Page = () => {
                   stroke="var(--surface-1)"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M6.5,20.5v-5c0-3.3,2.7-6,6-6h10"
                 />
                 <path
@@ -147,8 +147,8 @@ const Page = () => {
                   stroke="var(--surface-1)"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   d="M38.5,25.5v10c0,3.3-2.7,6-6,6h-20c-3.3,0-6-2.7-6-6v-7"
                 />
                 <line
@@ -160,16 +160,16 @@ const Page = () => {
                   stroke="var(--surface-1)"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                 />
                 <polyline
                   fill="none"
                   stroke="var(--surface-1)"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="3"
+                  strokeMiterlimit="10"
+                  strokeWidth="3"
                   points="27.5,6.5 41.5,6.5 41.5,20.5"
                 />
               </svg>

@@ -12,8 +12,13 @@
             var(--opaq-1) 1px);
     background-size: 4px 4px;
     backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
-        -moz-backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+}
+
+.nav.isAtTop {
+    background-image: radial-gradient(var(--opaq-1) 1px,
+            var(--opaq-1) 1px);
 }
 
 .navbar {

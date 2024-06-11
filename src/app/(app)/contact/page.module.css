@@ -199,17 +199,6 @@ form div.input {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* background-color: var(--border-line); */
-}
-
-form div.input:nth-child(6) {
-    height: 9rem;
-    justify-content: flex-start;
-}
-
-form div.input:nth-child(6) input {
-    height: auto;
-    padding: 1.2rem 1rem 5rem 1.4rem;
 }
 
 form div.input label {
@@ -237,15 +226,39 @@ form div.input input {
     outline: 1px solid var(--border-line);
 }
 
+form div.input:nth-child(6) {
+    height: 9rem;
+}
+
+form div.input textarea {
+    width: calc(100% - 2.4rem);
+    height: 70%;
+    border: none;
+    resize: none;
+    border-radius: .3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-2);
+    vertical-align: top;
+    text-align: start;
+    padding: 1rem 1rem .5rem 1.4rem;
+    background-image: linear-gradient(to right bottom, var(--surface-4), var(--opaq));
+    outline: 1px solid var(--border-line);
+}
+
 form div.input input:focus,
-form div.input input.not-empty {
+form div.input input.not-empty,
+form div.input textarea:focus,
+form div.input textarea.not-empty {
     outline: 1px solid var(--border-line);
     border-bottom: 2px solid var(--border-line);
     background: none;
 }
 
 form div.input input:focus+label,
-form div.input input.not-empty+label {
+form div.input input.not-empty+label,
+form div.input textarea:focus+label,
+form div.input textarea.not-empty+label {
     top: -.7rem;
     left: 1rem;
     font-size: .7rem;
@@ -390,6 +403,7 @@ div.story .details .role {
         justify-items: center;
         align-items: flex-start;
         width: calc(100% - 6rem);
+        height: 100%;
         max-width: calc(100% - 6rem);
         padding: 0 3rem;
     }
@@ -463,16 +477,6 @@ div.story .details .role {
         height: 5rem;
     }
 
-    section.form-box form div.input:nth-child(6) {
-        height: 9rem;
-        justify-content: flex-start;
-    }
-
-    section.form-box form div.input:nth-child(6) input {
-        height: auto;
-        padding: 1.2rem 1rem 5rem 1.4rem;
-    }
-
     section.about article {
         display: flex;
         flex-flow: row nowrap;
@@ -491,9 +495,9 @@ div.story .details .role {
 
     /* For Contact page */
 
-
     div.form {
         width: calc(100% - 2.6rem);
+        height: fit-content;
         background-color: var(--surface-1);
         display: flex;
         flex-direction: column;
@@ -507,8 +511,10 @@ div.story .details .role {
     }
 
     div.form form {
+        height: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         gap: 1rem;
     }
 
@@ -520,9 +526,8 @@ div.story .details .role {
         flex-direction: column;
     }
 
-    section.form-box div.input:nth-child(5),
-    section.form-box div.input:nth-child(6) {
-        width: 100%;
+    form div.input:nth-child(6) {
+        height: 9rem;
     }
 
     form div.input label {
@@ -536,7 +541,7 @@ div.story .details .role {
         cursor: text;
     }
 
-    form div.input input {
+    form div.input :where(input, textarea) {
         width: calc(100% - 2.3rem);
         padding: 0 1rem 0 1.3rem;
         background-image: linear-gradient(to right bottom, var(--surface-4), var(--surface-4));
@@ -544,14 +549,18 @@ div.story .details .role {
     }
 
     form div.input input:focus,
-    form div.input input.not-empty {
+    form div.input input.not-empty,
+    form div.input textarea:focus,
+    form div.input textarea.not-empty {
         outline: 1px solid var(--border-line);
         border-bottom: none;
         background: none;
     }
 
     form div.input input:focus+label,
-    form div.input input.not-empty+label {
+    form div.input input.not-empty+label,
+    form div.input textarea:focus+label,
+    form div.input textarea.not-empty+label {
         transform: none;
         padding: 0 .2rem;
         color: var(--text-2);

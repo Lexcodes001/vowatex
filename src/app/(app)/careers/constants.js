@@ -1,14 +1,14 @@
 export const Vacancies = [
   {
     name: "Content Writer",
-    preview: "content_writer",
+    preview: "Content Writer",
     status: "open",
     type: "Full-time",
     location: "Remote",
     uid: "cw00_",
     prologue:
       "A YouTube content writer is responsible for creating engaging and informative written content for YouTube videos",
-    company: "Miraldscale",
+    company: "Vowatex",
     desc: "A YouTube content writer, also known as a YouTube video description writer, is responsible for creating engaging and informative written content for YouTube videos. We are seeking a talented and creative Content Writer to join our team. You will collaborate with our creative teams to bring our brand and ideas to life through innovative and compelling visuals.",
     duties: [
       "Writing video descriptions: They craft compelling and engaging descriptions for YouTube videos that provide viewers with essential information about the video's content and help them understand what to expect.",
@@ -41,14 +41,14 @@ export const Vacancies = [
   },
   {
     name: "Video Editor",
-    preview: "video_editor",
+    preview: "Video Editor",
     status: "closed",
-    type: "Full-time (Project Based)",
+    type: "Full-time (P.B.)",
     location: "Remote",
-    uid: "ve01_",
+    uid: "ve01",
     prologue:
       "We are seeking Multiple creative and skilled Video Editors to join our dynamic team.",
-    company: "Miraldscale",
+    company: "Vowatex",
     desc: "As a Video Editor, you will be responsible for assembling and editing raw footage to create compelling videos that align with our requirements and details. The ideal candidate should have a keen eye for detail, strong storytelling abilities, and proficiency in video editing software.",
     duties: [
       "YouTube video editing - Edit and assemble footage with the Voice Over, ensuring the logical sequencing and smooth running of the final product",

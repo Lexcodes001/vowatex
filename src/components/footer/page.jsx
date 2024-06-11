@@ -196,10 +196,10 @@ export default function Footer() {
         </div>
         <motion.div
           variants={Variants}
-          initial="bottomFade"
+          initial="topFade"
           whileInView="center"
           transition={{
-            duration: 0.8,
+            duration: 0.5,
             easings: "easeOut",
             type: 'tween',
           }}

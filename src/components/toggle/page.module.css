@@ -3,8 +3,8 @@
     height: 3.5rem;
     position: fixed;
     z-index: 10;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
 }
 
 .relative {
@@ -47,10 +47,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: .5rem;
     background-image: linear-gradient(to right bottom, var(--text-2), var(--text-2));
-    border-radius: 1.6rem 1.6rem;
-    padding: .5rem .5rem .5rem;
+    border-radius: 1.4rem 1.4rem;
+    padding: .2rem .5rem .5rem;
 }
 
 .box::after {
@@ -110,15 +109,26 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin: .4rem 0 0;
 }
 
-.box span p {
+.box p.change-text {
+    height: .6rem;
+    font-size: .6rem;
+    padding: .2rem 0;
+    margin: auto;
+}
+
+.box p {
     color: var(--surface-4);
+    font-weight: 600;
     font-size: .7rem;
+    display: flex;
+    align-items: center;
 }
 
 .box span svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
     fill: var(--surface-4);
 }

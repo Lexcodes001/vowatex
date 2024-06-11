@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Overview from "@/components/overview/page";
 import Header from "@/components/header/header";
 import ContactPip from "../contact/cip";
@@ -16,7 +17,8 @@ import TrendIcon from "@/images/icons-trend.webp";
 import ForwardIcon from "@/images/icons-forward-button.webp";
 import Image from "next/image";
 import Hiring from "@/images/hiring.svg";
-import Writing from "../../../../public/assets/images/writing.webp";
+import Writing from "@/images/writing.webp";
+import { Variants } from "@/lib/variants";
 
 const valuesObj = [
   {
@@ -53,7 +55,16 @@ export default function Careers() {
 
       <section className={`${styles["career-sect"]} ${styles["intro"]}`}>
         <Image src={Hiring} alt="Hiring" />
-        <article>
+        <motion.article
+          variants={Variants}
+          initial="bottomFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            type: "tween",
+          }}
+        >
           <p>
             Are you a talented wordsmith with a passion for crafting engaging
             content?
@@ -62,76 +73,159 @@ export default function Careers() {
           <Link href={"./careers/#jobs"}>
             <button>SEE JOB VACANCIES</button>
           </Link>
-        </article>
+        </motion.article>
       </section>
 
       <section className={`${styles["career-sect"]} ${styles["why"]}`}>
         <Header>Why join us?</Header>
-        <p>
+        <motion.p
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            type: "tween",
+          }}
+        >
           Unlock your potential in a dynamic environment that champions growth
           and innovation. Join a team where your aspirations meet limitless
           opportunities.
-        </p>
-      </section>
-      <section className={`${styles["career-sect"]} ${styles["reasons"]}`}>
-        {valuesObj.map((value, index) => (
-          <Card
-            key={index}
-            icon={value.icon}
-            header={value.name}
-            desc={value.desc}
-          />
-        ))}
+        </motion.p>
+        <div className={`${styles["reasons"]}`}>
+          {valuesObj.map((value, index) => (
+            <Card
+              key={index}
+              icon={value.icon}
+              header={value.name}
+              desc={value.desc}
+            />
+          ))}
+        </div>
       </section>
 
       <section className={`${styles["career-sect"]} ${styles["roles"]}`}>
         <Header>Job Vacancies</Header>
-        <p className={styles["intro"]}>
+        <p
+          className={styles["intro"]}
+          variants={Variants}
+          initial="rightFade"
+          whileInView="center"
+          transition={{
+            duration: 0.5,
+            easings: "easeOut",
+            type: "tween",
+          }}
+        >
           Do you think you are capabale to fill any of the positions below?
         </p>
         <div className={styles.jobs}>
           {Vacancies.map((job) => (
             <Link
-              href={`./careers/${job.uid}`}
-              className={styles.job}
+              href={`careers/${job.uid}`}
+              className={`${job.status === "closed" && styles["not-active"]} ${
+                styles.job
+              }`}
               key={job.uid}
             >
               <Image width={100} height={100} src={Writing} alt={job.uid} />
               <div className={`${styles["details"]}`}>
                 <div className={`${styles["top"]}`}>
-                  <h3
+                  <motion.h3
+                    variants={Variants}
+                    initial="topFade"
+                    whileInView="center"
+                    transition={{
+                      duration: 0.5,
+                      easings: "easeOut",
+                      type: "tween",
+                    }}
                     className={`${job.status === "closed" && styles.blurred}`}
                   >
                     {job.name}
-                  </h3>
-                  <div className={styles["tags"]}>
-                    <span
-                      className={`${styles.status} ${job.status === "closed" && styles.closed}`}
+                  </motion.h3>
+                  <motion.div
+                    variants={Variants}
+                    initial="rightFade"
+                    whileInView="center"
+                    transition={{
+                      duration: 0.5,
+                      easings: "easeOut",
+                      type: "tween",
+                    }}
+                    className={styles["tags"]}
+                  >
+                    <motion.span
+                      variants={Variants}
+                      initial="bottomFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        type: "tween",
+                      }}
+                      className={`${styles.status} ${
+                        job.status === "closed" && styles.closed
+                      }`}
                     >
                       {job.status.toLocaleUpperCase()}
-                    </span>
-                    <span
+                    </motion.span>
+                    <motion.span
+                      variants={Variants}
+                      initial="bottomFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        type: "tween",
+                      }}
                       className={`${job.status === "closed" && styles.blurred}`}
                     >
                       {job.location}
-                    </span>
-                    <span
+                    </motion.span>
+                    <motion.span
+                      variants={Variants}
+                      initial="bottomFade"
+                      whileInView="center"
+                      transition={{
+                        duration: 0.5,
+                        easings: "easeOut",
+                        type: "tween",
+                      }}
                       className={`${job.status === "closed" && styles.blurred}`}
                     >
                       {job.type}
-                    </span>
-                  </div>
-                  <p className={`${job.status === "closed" && styles.blurred}`}>
+                    </motion.span>
+                  </motion.div>
+                  <motion.p
+                    variants={Variants}
+                    initial="rightFade"
+                    whileInView="center"
+                    transition={{
+                      duration: 0.5,
+                      easings: "easeOut",
+                      type: "tween",
+                    }}
+                    className={`${job.status === "closed" && styles.blurred}`}
+                  >
                     {job.prologue}
-                  </p>
+                  </motion.p>
                 </div>
-                <button
+                <motion.button
+                  variants={Variants}
+                  initial="scaleFade"
+                  whileInView="center"
+                  transition={{
+                    duration: 0.5,
+                    easings: "easeOut",
+                    type: "tween",
+                  }}
                   className={`${styles.jobPage} ${
                     job.status === "closed" && styles.blurred
                   }`}
                 >
                   SEE DETAILS
-                </button>
+                </motion.button>
               </div>
             </Link>
           ))}

@@ -102,7 +102,7 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -126,7 +126,7 @@ const Form = () => {
         </motion.div>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -150,7 +150,7 @@ const Form = () => {
         </motion.div>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -174,7 +174,7 @@ const Form = () => {
         </motion.div>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -195,7 +195,7 @@ const Form = () => {
         </motion.div>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -216,7 +216,7 @@ const Form = () => {
         </motion.div>
         <motion.div
           variants={Variants}
-          initial="leftFade"
+          initial="scaleFade"
           whileInView="center"
           transition={{
             duration: 0.5,
@@ -225,14 +225,13 @@ const Form = () => {
           }}
           className={`${styles["input"]} input`}
         >
-          <input
-            type="text"
+          <textarea
             name="request"
             id="request"
             className={`${formData.request !== "" ? styles["not-empty"] : ""}`}
             value={formData.request}
             onChange={handleChange}
-          />
+          ></textarea>
           <label htmlFor="request">Describe your content needs</label>
         </motion.div>
         <button type="submit" className={styles["submit"]}>
