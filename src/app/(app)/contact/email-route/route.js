@@ -1,32 +1,7 @@
 import { NextResponse } from "next/server";
-import { parse } from "url";
-import { createReadStream } from "fs";
-import multer from "multer";
 import UserReq from "../../../../../emails/sendUserReq";
 import { render } from "@react-email/render";
 import { handleEmailFire } from "@/lib/email-helper";
-
-// Set up Multer for handling file uploads
-const upload = multer({ storage: multer.memoryStorage() });
-
-// Disable default body parser in Next.js API routes
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-// Middleware to handle file upload
-const runMiddleware = (req, res, fn) => {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-      return resolve(result);
-    });
-  });
-};
 
 export async function POST(req) {
   const res = NextResponse.next();
@@ -66,7 +41,7 @@ export async function POST(req) {
         fileName,
         fileUrl,
         type,
-        jobName
+        jobName,
       };
     } else {
       return NextResponse.json(
@@ -75,15 +50,6 @@ export async function POST(req) {
       );
     }
 
-    // console.log("Received form data:", respData);
-
-    // if (!data.email || !data.request) {
-    //   return NextResponse.json(
-    //     { message: "Missing required fields" },
-    //     { status: 400 }
-    //   );
-    // }
-
     // Render the email content
     const html = render(UserReq({ data: respData }));
 
@@ -91,9 +57,7 @@ export async function POST(req) {
     const mailData = {
       to: process.env.SMTP_FROM,
       subject: `New ${
-        respData.type === "application"
-          ? "Job Application"
-          : "Client Request"
+        respData.type === "application" ? "Job Application" : "Client Request"
       } Received`,
       html,
       attachments: [],
