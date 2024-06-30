@@ -8,7 +8,6 @@ export const Variants = {
   center: (level) => {
     return {
       zIndex: level ? level : 1,
-      x: 0,
       y: 0,
       opacity: 1,
       scale: 1,
@@ -23,26 +22,26 @@ export const Variants = {
     };
   },
   topFade: {
-    y: -100,
+    y: -10,
     opacity: 0,
   },
   bottomFade: {
-    y: 100,
+    y: 10,
     opacity: 0,
   },
   fade: {
     opacity: 0,
   },
   leftFade: {
-    x: -50,
+    y: -10,
     opacity: 0,
   },
   rightFade: {
-    x: 50,
+    y: 10,
     opacity: 0,
   },
   scaleFade: {
-    scale: 0.7,
+    scale: 0.9,
     opacity: 0,
   },
 };
