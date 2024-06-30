@@ -10,7 +10,7 @@ const Card = ({icon, header, desc}) => {
         variants={Variants}
         initial="scaleFade"
         whileInView="center"
-        transition={{ duration: .5, easings: "easeOut" }}
+        transition={{ duration: .1, easings: "easeOut" }}
         className={styles["flip-container"]}
       >
         <div className={styles["flipper"]}>

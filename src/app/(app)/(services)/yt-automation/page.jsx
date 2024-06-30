@@ -100,7 +100,7 @@ const Page = () => {
           <header>
             Contact us to set up your automation solutions consultation
           </header>
-          <Form />
+          <Form formType={client}/>
         </div>
       </section>
 

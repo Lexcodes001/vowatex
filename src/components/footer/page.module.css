@@ -24,10 +24,12 @@ main .top {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
+    margin-top: 3rem;
+    padding: 2rem 2rem 2rem;
     gap: 2rem;
     z-index: 1;
     position: relative;
+    overflow: hidden;
 }
 
 main .top::after {
@@ -215,7 +217,8 @@ main .bottom {
         gap: 3rem;
         width: calc(100% - 6rem);
         max-width: calc(100% - 6rem);
-        padding: 6rem 3rem 2rem;
+        margin-top: 4rem;
+        padding: 2rem 3rem 2rem;
     }
 
     .top .about {

@@ -97,7 +97,7 @@ const Page = () => {
           <header>
             Contact us to set up your content strategy consultation
           </header>
-          <Form />
+          <Form formType={client} />
         </div>
       </section>
 

@@ -21,11 +21,13 @@
 .loader-box {
   position: fixed;
   inset: 0;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--surface-1);
+  background-color: var(--opaq-1);
+  backdrop-filter: blur(8px);
 }
 
 .loader-box .logo svg {

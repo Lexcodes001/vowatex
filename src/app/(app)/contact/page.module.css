@@ -1,3 +1,7 @@
+.loading{
+    opacity: 0.5;
+}
+
 .main {
     width: 100%;
     display: flex;
@@ -186,10 +190,11 @@ div.form {
     gap: 1.5rem;
 }
 
-:is(div.form, section.form-box) form {
+form.form-box {
     display: flex;
     flex-direction: column;
     gap: .8rem;
+    padding-bottom: .5rem;
 }
 
 form div.input {
@@ -226,8 +231,92 @@ form div.input input {
     outline: 1px solid var(--border-line);
 }
 
-form div.input:nth-child(6) {
-    height: 9rem;
+form div.input.textarea {
+    height: 9rem !important;
+}
+
+form div.input:where(.active-box, .file-box) {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .3rem;
+    padding: 0;
+    background-image: linear-gradient(to right bottom, var(--surface-4), var(--opaq));
+    outline: 1px solid var(--border-line);
+}
+
+form div.input.active-box {
+    height: 18rem;
+    max-height: fit-content;
+    gap: 1rem;
+}
+
+form div.input .file-label {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+}
+
+.file-label span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-2);
+}
+
+form div.input.active-box .file-label {
+    width: fit-content;
+    height: fit-content;
+    background: none;
+}
+
+form div.input.active-box .preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+form div.input.active-box .preview img {
+    width: auto;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: .5rem;
+    border: 2px dashed var(--border-line);
+}
+
+form div.input.active-box .preview p.file-name {
+    font-size: .8rem;
+    color: var(--text-2);
+    font-family: var(--montserrat-italic);
+}
+
+.file-label .actions {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+.file-label .actions :is(button, span) {
+    outline: 1px solid var(--border-line);
+    color: var(--text-2);
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    font-weight: 800;
+    border-radius: .3rem;
+    background: none;
+}
+
+.file-label .actions :is(button, span):hover {
+    color: var(--surface-4);
+    background-color: var(--text-2);
 }
 
 form div.input textarea {
@@ -276,15 +365,16 @@ form div.input .err {
 }
 
 form button.submit {
-    width: 7rem;
-    padding: .8rem 0;
-    border-radius: .3rem;
+    width: fit-content;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    margin-top: .8rem;
     font-weight: 700;
     color: var(--surface-1);
     background-image: linear-gradient(319deg, var(--brand) 0%, #ff6425 63%, #ffcb43 100%);
 }
 
-form button.submit:hover {
+form button.submit:hover:not(.loading) {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     outline: 1px solid var(--border-line);
@@ -298,7 +388,7 @@ div.story {
 }
 
 div.story .review p {
-    shape-outside: url('../../../../public/assets/images/dpF2.webp');
+    shape-outside: url('../../../../public/assets/images/dp8.webp');
     shape-margin: 10px;
     font-size: .8rem;
     font-family: var(--montserrat-italic), sans-serif;
@@ -309,6 +399,7 @@ div.story .review img {
     height: 5rem;
     border-radius: 50%;
     float: right;
+    object-fit: cover;
     margin-left: 10px;
 }
 
@@ -344,7 +435,7 @@ div.story .details .role {
 }
 
 @media only screen and (min-width: 600px) {
-    :is(div.form, section.form-box) form {
+    :is(div.form, section.form-sect) form {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -461,7 +552,7 @@ div.story .details .role {
     }
 
     /* For Contact page */
-    section.form-box form {
+    section.form-sect form {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -472,9 +563,14 @@ div.story .details .role {
         background-image: linear-gradient(to right, var(--surface-2) 85%, var(--surface-4));
     }
 
-    section.form-box form div.input {
+    section.form-sect form div.input {
         width: 48%;
         height: 5rem;
+    }
+
+    form div.input:nth-child(5),
+    form div.input:nth-child(6) {
+        width: 100% !important;
     }
 
     section.about article {
@@ -510,12 +606,17 @@ div.story .details .role {
         background-image: linear-gradient(to right, var(--surface-2) 85%, var(--surface-4));
     }
 
-    div.form form {
+    div.form form.form-box {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 1rem;
+    }
+
+    form div.input:where(.active-box, .file-box) {
+        background-image: linear-gradient(to right bottom, var(--surface-4), var(--surface-4));
+        outline: 2px solid var(--surface-2);
     }
 
     .cip-main form div.input {
@@ -526,7 +627,8 @@ div.story .details .role {
         flex-direction: column;
     }
 
-    form div.input:nth-child(6) {
+    form div.input.textarea {
+        width: 100%;
         height: 9rem;
     }
 
@@ -541,9 +643,12 @@ div.story .details .role {
         cursor: text;
     }
 
-    form div.input :where(input, textarea) {
-        width: calc(100% - 2.3rem);
+    form div.input input {
         padding: 0 1rem 0 1.3rem;
+    }
+
+    form div.input :is(input, textarea) {
+        width: calc(100% - 2.3rem);
         background-image: linear-gradient(to right bottom, var(--surface-4), var(--surface-4));
         outline: 2px solid var(--surface-2);
     }
@@ -574,7 +679,7 @@ div.story .details .role {
     }
 
     form button.submit {
-        width: 35%;
+        width: 8rem;
         padding: .8rem 0;
         border-radius: .3rem;
         font-weight: 700;
@@ -655,7 +760,7 @@ div.story .details .role {
         max-width: calc(90% - 6rem);
     }
 
-    section.form-box form {
+    section.form-sect form {
         width: calc(80% - 2.6rem);
     }
 }
@@ -668,7 +773,7 @@ div.story .details .role {
         max-width: calc(80% - 6rem);
     }
 
-    section.form-box form {
+    section.form-sect form {
         width: calc(80% - 2.6rem);
     }
 }

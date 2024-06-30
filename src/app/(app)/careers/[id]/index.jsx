@@ -1,12 +1,14 @@
 "use client";
 import styles from "./page.module.css";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Header from "@/components/header/header";
 import Form from "@/app/(app)/contact/form";
 import { Vacancies } from "../constants";
 import { Variants } from "@/lib/variants";
 import Overview from "@/components/overview/page";
 import Writing from "@/images/writing.webp";
+import Editor from "@/images/video_editor.webp";
 
 const CareerPage = ({ career }) => {
   const careerData = Vacancies.find((item) => item.uid === career);
@@ -24,7 +26,7 @@ const CareerPage = ({ career }) => {
       <Overview
         header={careerData.name}
         tagline={careerData.prologue}
-        img={Writing}
+        img={careerData.name === "Content Writer" ? Writing : Editor}
         routes={pageRoutes}
       />
 
@@ -35,7 +37,7 @@ const CareerPage = ({ career }) => {
           initial="fade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             staggerChildren: 0.5,
           }}
@@ -53,7 +55,7 @@ const CareerPage = ({ career }) => {
           initial="fade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             staggerChildren: 0.5,
           }}
@@ -69,7 +71,7 @@ const CareerPage = ({ career }) => {
           initial="fade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             staggerChildren: 0.5,
           }}
@@ -83,7 +85,7 @@ const CareerPage = ({ career }) => {
               initial="rightFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -105,7 +107,7 @@ const CareerPage = ({ career }) => {
               initial="rightFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -127,7 +129,7 @@ const CareerPage = ({ career }) => {
               initial="rightFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -146,14 +148,14 @@ const CareerPage = ({ career }) => {
           initial="fade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             staggerChildren: 0.5,
           }}
         >
           {careerData.process}
         </motion.p>
-        <Form />
+        <Form formType={"application"} jobName={careerData.name}/>
       </section>
     </main>
   );

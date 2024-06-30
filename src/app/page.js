@@ -124,7 +124,7 @@ export default function Home() {
               variants={Variants}
               initial="leftFade"
               whileInView="center"
-              transition={{ duration: 1, easings: "easeOut" }}
+              transition={{ duration: .1, easings: "easeOut" }}
             >
               <AnimatedText text={text} once={false} />
               <br />
@@ -134,7 +134,7 @@ export default function Home() {
               variants={Variants}
               initial="rightFade"
               whileInView="center"
-              transition={{ duration: 1, easings: "easeOut" }}
+              transition={{ duration: .1, easings: "easeOut" }}
             >
               Maestros of spellbinding scriptwriting and cosmic automation,
               propelling brands to unprecedented heights.
@@ -153,7 +153,7 @@ export default function Home() {
             variants={Variants}
             initial="rightFade"
             whileInView="center"
-            transition={{ duration: 1, easings: "easeOut" }}
+            transition={{ duration: .1, easings: "easeOut" }}
             className={styles["intro"]}
           >
             At Vowatex, these seven values guide our actions, ensuring that
@@ -172,7 +172,7 @@ export default function Home() {
             variants={Variants}
             initial="scaleFade"
             whileInView="center"
-            transition={{ duration: 1, easings: "easeOut" }}
+            transition={{ duration: .1, easings: "easeOut" }}
             className={styles["intro"]}
           >
             <Image src={Why} alt="why" />
@@ -195,7 +195,7 @@ export default function Home() {
                 variants={Variants}
                 initial="rightFade"
                 whileInView="center"
-                transition={{ duration: 1, easings: "easeOut" }}
+                transition={{ duration: .1, easings: "easeOut" }}
                 className={styles["step"]}
               >
                 <Image src={Storytelling} alt="story-telling" />
@@ -212,7 +212,7 @@ export default function Home() {
                 variants={Variants}
                 initial="leftFade"
                 whileInView="center"
-                transition={{ duration: 1, easings: "easeOut" }}
+                transition={{ duration: .1, easings: "easeOut" }}
                 className={styles["step"]}
               >
                 <Image src={Engagement} alt="engagement" />
@@ -229,7 +229,7 @@ export default function Home() {
                 variants={Variants}
                 initial="rightFade"
                 whileInView="center"
-                transition={{ duration: 1, easings: "easeOut" }}
+                transition={{ duration: .1, easings: "easeOut" }}
                 className={styles["step"]}
               >
                 <Image src={Automation} alt="automation" />
@@ -258,7 +258,7 @@ export default function Home() {
                 variants={Variants}
                 initial="scaleFade"
                 whileInView="center"
-                transition={{ duration: 0.5, easings: "easeOut" }}
+                transition={{ duration: 0.1, easings: "easeOut" }}
                 key={item.desc}
                 className={styles["solution"]}
               >
@@ -283,7 +283,7 @@ export default function Home() {
               initial="leftFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -305,7 +305,7 @@ export default function Home() {
               initial="rightFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -327,7 +327,7 @@ export default function Home() {
               initial="leftFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -359,7 +359,7 @@ export default function Home() {
                 initial="leftFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}

@@ -219,7 +219,7 @@ html {
     --surface-4: var(--surface-4-dark);
     --surface-shadow: var(--surface-shadow-dark);
     --shadow-strength: var(--shadow-strength-dark);
-    --opaq: rgba(0, 0, 0, .7);
+    --opaq: rgba(0, 0, 0, .5);
     --opaq-1: rgba(0, 0, 0, .7);
     --border-line: rgba(255, 255, 255, .2);
     --filter: invert(1);

@@ -1,4 +1,6 @@
 import { ThemeContextProvider } from "@/contexts/theme";
+import { AlertContextProvider } from "@/contexts/alert-context";
+import AlertBoxPortal from "@/components/alert-box/alert-box-portal";
 import localFont from "next/font/local";
 import "./globals.css";
 import Toggle from "@/components/toggle/page";
@@ -29,10 +31,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${montserratItalic.variable}`}>
-        <ThemeContextProvider>
-          {children}
-          <Toggle />
-        </ThemeContextProvider>
+        <AlertContextProvider>
+          <ThemeContextProvider>
+            <AlertBoxPortal />
+            {children}
+            <Toggle />
+          </ThemeContextProvider>
+        </AlertContextProvider>
       </body>
     </html>
   );

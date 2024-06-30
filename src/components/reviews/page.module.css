@@ -67,6 +67,7 @@ section.stories .avatars img {
     filter: grayscale(100%) blur(1px);
     align-self: center;
     justify-self: center;
+    object-fit: cover;
 }
 
 section.stories .avatars img.active {
@@ -78,6 +79,7 @@ section.stories .avatars img.active {
 }
 
 section.stories article {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -129,7 +131,7 @@ section.stories article .names p:nth-child(3) {
 
 section.stories article .testimony {
     color: var(--text-2);
-    font-size: .9rem;
+    font-size: .8rem;
     font-family: var(--montserrat-italic), sans-serif;
     text-align: center;
 }

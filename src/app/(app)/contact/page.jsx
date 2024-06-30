@@ -20,9 +20,9 @@ export default function Contact() {
         tagline={"Closer than before: Connect with Us to Unleash Your YouTube Potential"}
       />
 
-      <section className={`${styles["contact-sect"]} ${styles["form-box"]}`}>
+      <section className={`${styles["contact-sect"]} ${styles["form-sect"]}`}>
         <Header>Let&apos;s Discuss Your Channel&apos;s Content Goals</Header>
-        <Form />
+        <Form formType={"client"} />
       </section>
 
       <section className={`${styles["contact-sect"]} ${styles["about"]}`}>
@@ -35,7 +35,7 @@ export default function Contact() {
             initial="scaleFade"
             whileInView="center"
             transition={{
-              duration: 0.5,
+              duration: 0.1,
               easings: "easeOut",
               staggerChildren: 0.5,
             }}
@@ -51,7 +51,7 @@ export default function Contact() {
             initial="scaleFade"
             whileInView="center"
             transition={{
-              duration: 0.5,
+              duration: 0.1,
               easings: "easeOut",
               staggerChildren: 0.5,
             }}
@@ -67,7 +67,7 @@ export default function Contact() {
             initial="scaleFade"
             whileInView="center"
             transition={{
-              duration: 0.5,
+              duration: 0.1,
               easings: "easeOut",
               staggerChildren: 0.5,
             }}
@@ -87,7 +87,7 @@ export default function Contact() {
           initial="rightFade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             staggerChildren: 0.5,
           }}
@@ -101,7 +101,7 @@ export default function Contact() {
               initial="topFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
               }}
             >
@@ -113,7 +113,7 @@ export default function Contact() {
                 initial="topFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                 }}
               >
@@ -174,7 +174,7 @@ export default function Contact() {
               initial="topFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
               }}
             >
@@ -186,7 +186,7 @@ export default function Contact() {
                 initial="bottomFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                 }}
               >

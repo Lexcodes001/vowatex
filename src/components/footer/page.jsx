@@ -36,7 +36,7 @@ export default function Footer() {
               initial="rightFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -50,7 +50,7 @@ export default function Footer() {
               initial="leftFade"
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: 0.1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
@@ -68,7 +68,7 @@ export default function Footer() {
                 initial="rightFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -77,7 +77,7 @@ export default function Footer() {
               </motion.header>
               <motion.div
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -88,18 +88,7 @@ export default function Footer() {
                     key={item.id}
                     className={`${pathname === item.url ? styles.active : ""}`}
                   >
-                    <motion.p
-                      variants={Variants}
-                      initial="leftFade"
-                      whileInView="center"
-                      transition={{
-                        duration: 0.5,
-                        easings: "easeOut",
-                        staggerChildren: 0.5,
-                      }}
-                    >
-                      {item.name}
-                    </motion.p>
+                    <motion.p>{item.name}</motion.p>
                   </Link>
                 ))}
               </motion.div>
@@ -110,7 +99,7 @@ export default function Footer() {
                 initial="rightFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -119,7 +108,7 @@ export default function Footer() {
               </motion.header>
               <motion.div
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -131,14 +120,7 @@ export default function Footer() {
                     className={`${pathname === item.url ? styles.active : ""}`}
                   >
                     <motion.p
-                      variants={Variants}
-                      initial="leftFade"
-                      whileInView="center"
-                      transition={{
-                        duration: 0.5,
-                        easings: "easeOut",
-                        staggerChildren: 0.5,
-                      }}
+                     
                     >
                       {item.name}
                     </motion.p>
@@ -152,7 +134,7 @@ export default function Footer() {
                 initial="rightFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -164,7 +146,7 @@ export default function Footer() {
                 initial="leftFade"
                 whileInView="center"
                 transition={{
-                  duration: 0.5,
+                  duration: 0.1,
                   easings: "easeOut",
                   staggerChildren: 0.5,
                 }}
@@ -177,14 +159,7 @@ export default function Footer() {
                   >
                     {item.icon}
                     <motion.p
-                      variants={Variants}
-                      initial="rightFade"
-                      whileInView="center"
-                      transition={{
-                        duration: 0.5,
-                        easings: "easeOut",
-                        staggerChildren: 0.5,
-                      }}
+                      
                     >
                       {item.name}
                     </motion.p>
@@ -199,9 +174,9 @@ export default function Footer() {
           initial="topFade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
-            type: 'tween',
+            type: "tween",
           }}
           className={styles["bottom"]}
         >

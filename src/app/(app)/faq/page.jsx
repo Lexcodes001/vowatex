@@ -37,7 +37,7 @@ export default function Faq() {
           variants={Variants}
           initial="rightFade"
           whileInView="center"
-          transition={{ duration: 1, easings: "easeOut" }}
+          transition={{ duration: .1, easings: "easeOut" }}
         >
           We collaborate with remarkable individuals who excel in the art of
           crafting captivating content
@@ -49,7 +49,7 @@ export default function Faq() {
           variants={Variants}
           initial="leftFade"
           whileInView="center"
-          transition={{ duration: 1, easings: "easeOut" }}
+          transition={{ duration: .1, easings: "easeOut" }}
           className={styles["nav-tab"]}
         >
           {faqCategories.map((category, index) => (
@@ -57,7 +57,7 @@ export default function Faq() {
               variants={Variants}
               initial="rightFade"
               whileInView="center"
-              transition={{ duration: 1, easings: "easeOut" }}
+              transition={{ duration: .1, easings: "easeOut" }}
               key={category.category}
               onClick={() => {
                 handleTabToggle(index);
@@ -77,7 +77,7 @@ export default function Faq() {
               variants={Variants}
               initial="topFade"
               whileInView="center"
-              transition={{ duration: 1, easings: "easeOut" }}
+              transition={{ duration: .1, easings: "easeOut" }}
               key={faq.question}
               className={`${styles["box"]} ${
                 activeId === faq.id && styles.active

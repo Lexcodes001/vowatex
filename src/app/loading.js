@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const colorArray = [
   "hsl(122, 74%, 56%)",
@@ -12,10 +12,12 @@ const colorArray = [
 ];
 
 const Loader = () => {
+  const [index, setIndex] = useState(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * textArray.length);
-      setText(colorArray[randomIndex]);
+      const randomIndex = Math.floor(Math.random() * colorArray.length);
+      setIndex(colorArray[randomIndex]);
     }, 1000);
 
     return () => clearInterval(interval); // Clean up interval on component unmount

@@ -60,7 +60,7 @@ const Overview = ({ img, header, tagline, routes }) => {
         variants={Variants}
         initial="topFade"
         whileInView="center"
-        transition={{ duration: 1, easings: "easeOut" }}
+        transition={{ duration: .1, easings: "easeOut" }}
       >
         {header}
       </motion.header>
@@ -68,7 +68,7 @@ const Overview = ({ img, header, tagline, routes }) => {
         variants={Variants}
         initial="bottomFade"
         whileInView="center"
-        transition={{ duration: 1, easings: "easeOut" }}
+        transition={{ duration: .1, easings: "easeOut" }}
       >
         {tagline}
       </motion.p>

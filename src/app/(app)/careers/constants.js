@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Vacancies = [
   {
     name: "Content Writer",
@@ -36,13 +38,20 @@ export const Vacancies = [
       "Excellent organizational and time management skills, with the ability to handle multiple projects simultaneously and meet tight deadlines.",
       "Strong collaboration and communication skills, with the ability to work effectively with cross-functional teams.",
     ],
-    process:
-      "Join us on our exciting journey to create videos that will hook viewers, keep them engaged, and get the best channel push. And be a key player in shaping our content strategy! We look forward to welcoming a creative and talented Content Writer to our team. We would be delighted to hear from you if you are a talented and driven Graphic Designer looking to contribute to the growth of our business. To olaoluwamalachi@gmail, kindly send your résumé, cover letter, and a link to your portfolio featuring your best work. The above mentioned could also be done with the form below",
+    process: (
+      <>
+        Interested candidates should submit their resume, cover letter, and a
+        link to their portfolio to{" "}
+        {<Link href="mailto:vowatex@gmail.com">vowatex@gmail.com</Link>}. Please
+        include &quot;Content Writer Application&quot; in the subject line. The
+        above mentioned could also be done with the form below
+      </>
+    ),
   },
   {
     name: "Video Editor",
     preview: "Video Editor",
-    status: "closed",
+    status: "open",
     type: "Full-time (P.B.)",
     location: "Remote",
     uid: "ve01",
@@ -71,7 +80,14 @@ export const Vacancies = [
       "Excellent communication and teamwork skills.",
       "Ability to meet deadlines and work well under pressure.",
     ],
-    process:
-      'Interested candidates should submit their resume, cover letter, and a link to their portfolio to [info@miraldscale.com]. Please include "Video Editor Application" in the subject line. The above mentioned could also be done with the form below',
+    process: (
+      <>
+        Interested candidates should submit their resume, cover letter, and a
+        link to their portfolio to{" "}
+        {<Link href="mailto:vowatex@gmail.com">vowatex@gmail.com</Link>}. Please
+        include &quot;Video Editor Application&quot; in the subject line. The
+        above mentioned could also be done with the form below
+      </>
+    ),
   },
 ];

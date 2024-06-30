@@ -8,7 +8,7 @@ const Header = ({children, className, fontSize}) => {
     variants={Variants}
     initial="rightFade"
     whileInView="center"
-    transition={{duration: 1.2, type: 'spring'}}
+    transition={{duration: .2, type: 'spring'}}
     className={`${className} ${styles.header}`}
     >{children}</motion.header>
   )

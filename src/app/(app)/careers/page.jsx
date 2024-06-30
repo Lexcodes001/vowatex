@@ -18,6 +18,7 @@ import ForwardIcon from "@/images/icons-forward-button.webp";
 import Image from "next/image";
 import Hiring from "@/images/hiring.svg";
 import Writing from "@/images/writing.webp";
+import Editor from "@/images/video_editor.webp";
 import { Variants } from "@/lib/variants";
 
 const valuesObj = [
@@ -60,7 +61,7 @@ export default function Careers() {
           initial="bottomFade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             type: "tween",
           }}
@@ -83,7 +84,7 @@ export default function Careers() {
           initial="rightFade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             type: "tween",
           }}
@@ -112,7 +113,7 @@ export default function Careers() {
           initial="rightFade"
           whileInView="center"
           transition={{
-            duration: 0.5,
+            duration: 0.1,
             easings: "easeOut",
             type: "tween",
           }}
@@ -128,7 +129,7 @@ export default function Careers() {
               }`}
               key={job.uid}
             >
-              <Image width={100} height={100} src={Writing} alt={job.uid} />
+              <Image width={100} height={100} src={job.name === "Content Writer" ? Writing : Editor} alt={job.uid} />
               <div className={`${styles["details"]}`}>
                 <div className={`${styles["top"]}`}>
                   <motion.h3
@@ -136,7 +137,7 @@ export default function Careers() {
                     initial="topFade"
                     whileInView="center"
                     transition={{
-                      duration: 0.5,
+                      duration: 0.1,
                       easings: "easeOut",
                       type: "tween",
                     }}
@@ -149,7 +150,7 @@ export default function Careers() {
                     initial="rightFade"
                     whileInView="center"
                     transition={{
-                      duration: 0.5,
+                      duration: 0.1,
                       easings: "easeOut",
                       type: "tween",
                     }}
@@ -160,7 +161,7 @@ export default function Careers() {
                       initial="bottomFade"
                       whileInView="center"
                       transition={{
-                        duration: 0.5,
+                        duration: 0.1,
                         easings: "easeOut",
                         type: "tween",
                       }}
@@ -175,7 +176,7 @@ export default function Careers() {
                       initial="bottomFade"
                       whileInView="center"
                       transition={{
-                        duration: 0.5,
+                        duration: 0.1,
                         easings: "easeOut",
                         type: "tween",
                       }}
@@ -188,7 +189,7 @@ export default function Careers() {
                       initial="bottomFade"
                       whileInView="center"
                       transition={{
-                        duration: 0.5,
+                        duration: 0.1,
                         easings: "easeOut",
                         type: "tween",
                       }}
@@ -202,7 +203,7 @@ export default function Careers() {
                     initial="rightFade"
                     whileInView="center"
                     transition={{
-                      duration: 0.5,
+                      duration: 0.1,
                       easings: "easeOut",
                       type: "tween",
                     }}
@@ -216,7 +217,7 @@ export default function Careers() {
                   initial="scaleFade"
                   whileInView="center"
                   transition={{
-                    duration: 0.5,
+                    duration: 0.1,
                     easings: "easeOut",
                     type: "tween",
                   }}

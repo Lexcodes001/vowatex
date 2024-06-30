@@ -190,7 +190,7 @@ export default function Navigation() {
                     initial="scaleFade"
                     whileInView="center"
                     transition={{
-                      duration: 1,
+                      duration: .5,
                       easings: "easeOut",
                       staggerChildren: 0.5,
                     }}
@@ -202,7 +202,7 @@ export default function Navigation() {
                     initial="leftFade"
                     whileInView="center"
                     transition={{
-                      duration: 0.5,
+                      duration: .3,
                       easings: "easeOut",
                       staggerChildren: 0.5,
                     }}

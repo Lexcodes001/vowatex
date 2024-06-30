@@ -30,7 +30,7 @@ export default function About() {
           variants={Variants}
           initial="rightFade"
           whileInView="center"
-          transition={{ duration: 1, easings: "easeOut" }}
+          transition={{ duration: .1, easings: "easeOut" }}
         >
           Vowatex places YouTube script writing and automation at the core of
           your brand&apos;s growth strategy
@@ -39,7 +39,7 @@ export default function About() {
           variants={Variants}
           initial="rightFade"
           whileInView="center"
-          transition={{ duration: 1, easings: "easeOut" }}
+          transition={{ duration: .1, easings: "easeOut" }}
         >
           Our unwavering mission is to bridge the gap between businesses and
           their target audiences through compelling YouTube scripts meticulously
@@ -53,7 +53,7 @@ export default function About() {
           variants={Variants}
           initial="rightFade"
           whileInView="center"
-          transition={{ duration: 1, easings: "easeOut" }}
+          transition={{ duration: .1, easings: "easeOut" }}
           className={styles["intro"]}
         >
           At Vowatex, these seven values guide our actions, ensuring that every
@@ -84,7 +84,7 @@ export default function About() {
               initial={`${index % 2 === 0 ? "leftFade" : "rightFade"}`}
               whileInView="center"
               transition={{
-                duration: 0.5,
+                duration: .1,
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}

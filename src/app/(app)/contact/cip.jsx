@@ -1,10 +1,10 @@
-'use client';
+"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Form from './form';
-import Header from '@/components/header/header';
+import Form from "./form";
+import Header from "@/components/header/header";
 import styles from "./page.module.css";
-import reviewImg from "@/images/dpF2.webp";
+import reviewImg from "@/images/dp8.webp";
 import { Variants } from "@/lib/variants";
 
 const ContactPip = () => {
@@ -16,7 +16,7 @@ const ContactPip = () => {
         initial="leftFade"
         whileInView="center"
         transition={{
-          duration: 0.5,
+          duration: 0.1,
           easings: "easeOut",
           staggerChildren: 0.5,
         }}
@@ -35,21 +35,21 @@ const ContactPip = () => {
       </motion.div>
 
       <div className={styles["form"]}>
-        <Form />
+        <Form formType={"client"} />
       </div>
 
       <motion.div className={styles["story"]}>
         <div className={styles["review"]}>
           <Image src={reviewImg} alt="reviewImage" />
           <motion.p
-          variants={Variants}
-              initial="leftFade"
-              whileInView="center"
-              transition={{
-                duration: 0.5,
-                easings: "easeOut",
-                staggerChildren: 0.5,
-              }}
+            variants={Variants}
+            initial="leftFade"
+            whileInView="center"
+            transition={{
+              duration: 0.1,
+              easings: "easeOut",
+              staggerChildren: 0.5,
+            }}
           >
             &quot;The Vowatex team is cosmic and incredibly helpful. They not
             only help bring your YouTube vision to life, they truly endeavor to
@@ -60,17 +60,18 @@ const ContactPip = () => {
         </div>
 
         <motion.div
-        variants={Variants}
-              initial="leftFade"
-              whileInView="center"
-              transition={{
-                duration: 0.5,
-                easings: "easeOut",
-                staggerChildren: 0.5,
-              }}
-         className={styles["details"]}>
-          <p className={styles["name"]}>Zara Celestial</p>
-          <p className={styles["role"]}>Galactic YouTube Creator</p>
+          variants={Variants}
+          initial="leftFade"
+          whileInView="center"
+          transition={{
+            duration: 0.1,
+            easings: "easeOut",
+            staggerChildren: 0.5,
+          }}
+          className={styles["details"]}
+        >
+          <p className={styles["name"]}>Leo Orbit</p>
+          <p className={styles["role"]}>leo_vlogs</p>
         </motion.div>
       </motion.div>
     </section>
