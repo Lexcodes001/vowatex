@@ -58,6 +58,18 @@ const Form = ({ formType, jobName }) => {
     validateForm();
   }, [formData, err]);
 
+  function truncateMiddle(text, maxLength) {
+    if (text.length <= maxLength) {
+      return text;
+    }
+
+    const middle = Math.floor(maxLength / 2);
+    const start = text.slice(0, middle);
+    const end = text.slice(-middle); // -3 to account for the ellipsis
+
+    return `${start}...${end}`;
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -138,13 +150,17 @@ const Form = ({ formType, jobName }) => {
       finalFormData.append("fileName", fileName);
       finalFormData.append("fileUrl", downloadURL);
 
-      const response = await fetch(
-        "http://localhost:3000/contact/email-route",
-        {
-          method: "POST",
-          body: finalFormData,
-        }
-      );
+      const baseURL =
+        process.env.NODE_ENV === "development"
+          ? process.env.APP_API_URL_DEV
+          : process.env.APP_API_URL_PROD;
+      const endpoint = "/contact/email-route";
+      const url = `${baseURL}${endpoint}`;
+
+      const response = await fetch(url, {
+        method: "POST",
+        body: finalFormData,
+      });
 
       if (!response.ok) {
         dispatchAction(
@@ -516,7 +532,9 @@ const Form = ({ formType, jobName }) => {
                     <p>Cannot preview this file type.</p>
                   )}
                   {fileName && (
-                    <p className={styles["file-name"]}>{fileName}</p>
+                    <p className={styles["file-name"]}>
+                      {truncateMiddle(fileName, 10)}
+                    </p>
                   )}
                 </div>
               )}

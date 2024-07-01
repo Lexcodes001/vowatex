@@ -247,8 +247,8 @@ form div.input:where(.active-box, .file-box) {
 }
 
 form div.input.active-box {
-    height: 18rem;
-    max-height: fit-content;
+    padding: 1.5rem 0;
+    height: fit-content;
     gap: 1rem;
 }
 
@@ -259,6 +259,7 @@ form div.input .file-label {
     height: 100%;
     cursor: pointer;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     gap: .3rem;
@@ -293,6 +294,7 @@ form div.input.active-box .preview img {
 }
 
 form div.input.active-box .preview p.file-name {
+    width: fit-content;
     font-size: .8rem;
     color: var(--text-2);
     font-family: var(--montserrat-italic);
