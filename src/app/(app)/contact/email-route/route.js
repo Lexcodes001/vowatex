@@ -5,6 +5,12 @@ import { handleEmailFire } from "@/lib/email-helper";
 // import { runMiddleware } from '@/lib/corsMiddleware';
 // import cors from '@/lib/corsMiddleware';
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export async function POST(req, res) {
   // await runMiddleware(req, res, cors);
   try {
@@ -43,6 +49,7 @@ export async function POST(req, res) {
         jobName,
       };
     } else {
+      console.error("Error processing email:", error);
       return NextResponse.json(
         { message: "Unsupported content type" },
         { status: 415 }
