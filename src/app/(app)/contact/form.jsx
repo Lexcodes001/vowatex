@@ -151,9 +151,9 @@ const Form = ({ formType, jobName }) => {
       finalFormData.append("fileUrl", downloadURL);
 
       const baseURL =
-        process.env.NODE_ENV === "development"
-          ? process.env.APP_API_URL_DEV
-          : process.env.APP_API_URL_PROD;
+        window.location.hostname === "localhost"
+          ? "http://localhost:3000"
+          : "https://vowatex.com";
       const endpoint = "/contact/email-route";
       const url = `${baseURL}${endpoint}`;
 
