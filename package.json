@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-email/components": "^0.0.19",
+    "cors": "^2.8.5",
     "firebase": "^10.12.2",
     "formidable": "^3.5.1",
     "framer-motion": "^11.2.2",

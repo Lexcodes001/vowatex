@@ -156,7 +156,6 @@ const Form = ({ formType, jobName }) => {
           : "https://vowatex.com";
       const endpoint = "/contact/email-route";
       const url = `${baseURL}${endpoint}`;
-      alert(baseURL);
 
       const response = await fetch(url, {
         method: "POST",
@@ -185,9 +184,12 @@ const Form = ({ formType, jobName }) => {
       );
       setFormData(defaultInputs);
       setLoading(false);
+
+      console.log("Data: ", data);
       return data;
     } catch (error) {
       setLoading(false);
+      console.log("Error: ", error);
     }
   }
 
