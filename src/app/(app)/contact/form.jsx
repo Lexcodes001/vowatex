@@ -173,7 +173,13 @@ const Form = ({ formType, jobName }) => {
         throw new Error(`An error has occurred: ${response.statusText}`);
       }
 
-      const data = await response.json();
+
+      const text = await response.text();
+      console.log("Response text:", text);
+
+      const data = JSON.parse(text);
+      console.log("Success:", data);
+      
       dispatchAction(
         "action_status",
         "dynamic",

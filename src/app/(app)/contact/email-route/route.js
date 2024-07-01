@@ -5,13 +5,7 @@ import { handleEmailFire } from "@/lib/email-helper";
 // import { runMiddleware } from '@/lib/corsMiddleware';
 // import cors from '@/lib/corsMiddleware';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-export async function POST(req, res) {
+export async function POST(req) {
   // await runMiddleware(req, res, cors);
   try {
     // Parse form data from the request body
@@ -69,7 +63,6 @@ export async function POST(req, res) {
       attachments: [],
     };
 
-    // Send the email with the attachment
     await handleEmailFire(mailData);
 
     return NextResponse.json({ message: "Success" }, { status: 200 });
