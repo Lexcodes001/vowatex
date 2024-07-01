@@ -19,7 +19,6 @@ export const handleEmailFire = async (data) => {
       from: process.env.SMTP_FROM,
       ...data,
     });
-    console.log("Email sent: ", info.response);
   } catch (error) {
     console.error("Error sending email:", error);
     throw error;

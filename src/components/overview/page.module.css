@@ -3,7 +3,7 @@ section.overview {
     max-width: 600px;
     padding: 4.5rem 2rem 0;
     margin: auto;
-    height: calc(40dvh);
+    height: calc(45dvh);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@ section.overview {
 
 section.custom{
     padding: 2rem 2rem 0;
-    height: calc(45dvh);
+    height: calc(50dvh);
     background-image: linear-gradient(180deg, var(--opaq), var(--opaq)), linear-gradient(180deg, var(--opaq-1), var(--opaq)), linear-gradient(180deg, var(--opaq-1), transparent, var(--surface-1));
 }
 
@@ -56,7 +56,7 @@ section.overview img{
 }
 
 section.overview header {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
     line-height: 3rem;

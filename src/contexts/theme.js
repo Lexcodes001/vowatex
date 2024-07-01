@@ -21,7 +21,6 @@ const [theme, setTheme] = useState(getThemeFromStorage());
     setTheme(selectedTheme);
     setMode(selectedTheme);
     localStorage.setItem("theme", selectedTheme);
-    console.log("selectedTheme", selectedTheme);
   };
 
   useEffect(() => {

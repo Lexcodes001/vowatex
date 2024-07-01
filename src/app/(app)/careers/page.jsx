@@ -105,7 +105,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className={`${styles["career-sect"]} ${styles["roles"]}`}>
+      <section className={`${styles["career-sect"]} ${styles["roles"]}`} id="jobs">
         <Header>Job Vacancies</Header>
         <p
           className={styles["intro"]}

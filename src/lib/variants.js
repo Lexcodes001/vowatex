@@ -33,11 +33,11 @@ export const Variants = {
     opacity: 0,
   },
   leftFade: {
-    y: -10,
+    y: 10,
     opacity: 0,
   },
   rightFade: {
-    y: 10,
+    y: -10,
     opacity: 0,
   },
   scaleFade: {

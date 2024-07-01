@@ -7,7 +7,6 @@ import Link from "next/link";
 
 const Overview = ({ img, header, tagline, routes }) => {
   const randomIndex = Math.floor(Math.random() * 4) + 1;
-  console.log(routes);
 
   const router = useRouter();
 

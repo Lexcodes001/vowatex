@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import styles from "./page.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -25,7 +25,7 @@ const stories = [
     id: 1,
     name: "Samantha Lee",
     username: "samanthalee_tv",
-    avatar: dp2,
+    avatar: dp3,
     testimony:
       "Utilizing VOWATEX's automation services has been a game-changer for my YouTube channel. Managing a channel with frequent uploads can be overwhelming, but VOWATEX's automation tools have streamlined the process significantly. From automated video uploads to scheduling and even managing comments, their service has taken the technical burden off my shoulders. The automation workflows are intuitive and robust, allowing me to focus more on creating content and engaging with my audience rather than being bogged down by administrative tasks. This shift has not only saved me countless hours but also improved my channel's overall performance. I now have the time and energy to produce higher quality content, which has resulted in increased viewership and subscriber growth. VOWATEX's automation service is an essential tool for any serious YouTuber looking to optimize their workflow and achieve sustainable growth.",
   },
@@ -33,7 +33,7 @@ const stories = [
     id: 2,
     name: "Michael Thompson",
     username: "mike_thompson",
-    avatar: dp3,
+    avatar: dp2,
     testimony:
       "Before I started using VOWATEX, maintaining a consistent content schedule for my YouTube channel was a constant struggle. Their script-writing service has been a revelation. The scripts are not only well-written and engaging but also perfectly tailored to my channel's niche and audience preferences. This level of customization has made a noticeable difference in my content's quality and reception. My videos are now more polished and professional, which has significantly boosted my channel's reputation and subscriber count. Additionally, the process of collaborating with VOWATEX is seamless. Their team is always receptive to my input and ensures that each script aligns with my vision. Since partnering with VOWATEX, I've seen a marked improvement in my channel's performance, with higher engagement rates and more positive viewer feedback. VOWATEX has become an indispensable part of my content creation strategy, and I can't imagine going back to the way things were before.",
   },
@@ -57,7 +57,7 @@ const stories = [
     id: 5,
     name: "Emily Roberts",
     username: "emily_roberts_tv",
-    avatar: dp6,
+    avatar: dp7,
     testimony:
       "VOWATEX's automation services have been a transformative addition to my YouTube workflow. Managing a successful channel involves countless behind-the-scenes tasks, from uploading videos to scheduling and responding to comments. VOWATEX has taken the hassle out of these processes with their advanced automation tools. The system is incredibly user-friendly and efficient, allowing me to set up automated workflows that handle all the repetitive tasks. This has freed up a significant amount of my time, enabling me to focus on creating more engaging and high-quality content for my viewers. The impact on my channel's growth has been remarkable. I've seen a substantial increase in viewer engagement and subscriber numbers since I started using VOWATEX. Their automation services are an essential tool for any YouTuber looking to optimize their workflow, reduce stress, and achieve sustainable growth. I can't recommend VOWATEX highly enough.",
   },
@@ -65,7 +65,7 @@ const stories = [
     id: 6,
     name: "David Johnson",
     username: "davidjohnson_youtube",
-    avatar: dp7,
+    avatar: dp6,
     testimony:
       "VOWATEX's script-writing service is nothing short of phenomenal. Before partnering with them, I struggled to keep my content fresh and engaging. Their team of expert writers took the time to understand my channel's niche and audience, delivering scripts that are both captivating and informative. The level of detail and creativity in each script has elevated my videos to a whole new level. My viewers have noticed the difference, and I've received an overwhelming amount of positive feedback. The increase in engagement and subscriber growth has been impressive. Working with VOWATEX has not only improved the quality of my content but also made the entire content creation process more enjoyable and less stressful. Their professionalism, creativity, and dedication to excellence make them an invaluable partner for any YouTuber. I can't imagine going back to creating content without their support. VOWATEX is simply the best in the business.",
   },
@@ -114,7 +114,7 @@ const variants = {
   },
 };
 
-const Reviews = ({parallax}) => {
+const Reviews = ({ parallax }) => {
   const [[activeId, direction1], setActiveId] = useState([0, 0]);
   const [newStories, setNewStories] = useState([]);
 
@@ -168,7 +168,6 @@ const Reviews = ({parallax}) => {
       } else {
         setActiveId([activeId + newDirection, newDirection]);
       }
-      console.log([activeId, newDirection]);
     }
   };
 
@@ -176,9 +175,11 @@ const Reviews = ({parallax}) => {
     <>
       <section className={styles["stories"]}>
         <header>Reviews</header>
-        {parallax && <div className={styles["scroll-effect"]}>
-          <ParallaxText baseVelocity={-5}>Testimonials ◦</ParallaxText>
-        </div>}
+        {parallax && (
+          <div className={styles["scroll-effect"]}>
+            <ParallaxText baseVelocity={-5}>Testimonials ◦</ParallaxText>
+          </div>
+        )}
         <div className={styles["user-stories"]}>
           <div className={styles["avatars"]}>
             <AnimatePresence>
@@ -231,9 +232,11 @@ const Reviews = ({parallax}) => {
               <p>•</p>
               <p>@{stories[activeId].username}</p>
             </span>
-            <span className={styles["testimony"]}>
-              {stories[activeId].testimony}
-            </span>
+            <div className={styles["testimony"]}>
+              <span className={styles.quotes}>“</span>
+              <p>{stories[activeId].testimony}</p>
+              <span className={styles.quotes}>”</span>
+            </div>
           </motion.article>
         </div>
       </section>

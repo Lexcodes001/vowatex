@@ -4,9 +4,6 @@ import { render } from "@react-email/render";
 import { handleEmailFire } from "@/lib/email-helper";
 
 export async function POST(req) {
-  const res = NextResponse.next();
-  await runMiddleware(req, res, upload.single("resume"));
-
   try {
     // Parse form data from the request body
     const contentType = req.headers.get("content-type");
@@ -14,7 +11,6 @@ export async function POST(req) {
 
     if (contentType.includes("application/json")) {
       respData = await req.json();
-      console.log(respData, "1");
     } else if (contentType.includes("multipart/form-data")) {
       const Formdata = await req.formData();
       const firstName = Formdata.get("firstName");

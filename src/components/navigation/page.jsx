@@ -68,6 +68,11 @@ export default function Navigation() {
     };
   }, []);
 
+  const getFirstSegment = (url) => {
+    const segments = url.split("/");
+    return segments[1] || "";
+  };
+
   return (
     <nav
       className={`${styles.nav} ${!isVisible && styles.isAtTop}
@@ -183,14 +188,18 @@ export default function Navigation() {
                   }}
                   href={item.url}
                   key={item.id}
-                  className={`${pathname === item.url ? styles.active : ""}`}
+                  className={`${
+                    getFirstSegment(pathname) === getFirstSegment(item.url)
+                      ? styles.active
+                      : ""
+                  }`}
                 >
                   <motion.span
                     variants={Variants}
                     initial="scaleFade"
                     whileInView="center"
                     transition={{
-                      duration: .5,
+                      duration: 0.5,
                       easings: "easeOut",
                       staggerChildren: 0.5,
                     }}
@@ -202,7 +211,7 @@ export default function Navigation() {
                     initial="leftFade"
                     whileInView="center"
                     transition={{
-                      duration: .3,
+                      duration: 0.3,
                       easings: "easeOut",
                       staggerChildren: 0.5,
                     }}

@@ -51,7 +51,6 @@ const Form = ({ formType, jobName }) => {
       );
 
       let result = nonEmptyFields.length > 1 && currentErrors.length === 0;
-      console.log(nonEmptyFields, currentErrors, result);
 
       setIsValid(result);
     };
@@ -72,10 +71,9 @@ const Form = ({ formType, jobName }) => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
+
           switch (snapshot.state) {
             case "paused":
-              console.log("Upload is paused");
               break;
             case "running":
               // dispatchAction(
@@ -84,7 +82,7 @@ const Form = ({ formType, jobName }) => {
               //   "success",
               //   `Upload has started...`
               // );
-              console.log("Upload is running");
+
               break;
           }
         },
@@ -131,12 +129,14 @@ const Form = ({ formType, jobName }) => {
 
       const finalFormData = new FormData(e.target);
       for (const [key, value] of Object.entries(formData)) {
-        finalFormData.append(`${key}`, value);
+        finalFormData.append(
+          `${key}`,
+          typeof value === "string" ? value.trim() : value
+        );
       }
       finalFormData.append("resume", selectedFile);
       finalFormData.append("fileName", fileName);
       finalFormData.append("fileUrl", downloadURL);
-      console.log("File available at downloadUrl", downloadURL);
 
       const response = await fetch(
         "http://localhost:3000/contact/email-route",
@@ -153,7 +153,7 @@ const Form = ({ formType, jobName }) => {
           "fail",
           `An error has occurred: ${response.statusText}`
         );
-        console.log(response);
+
         throw new Error(`An error has occurred: ${response.statusText}`);
       }
 
@@ -170,14 +170,13 @@ const Form = ({ formType, jobName }) => {
       setLoading(false);
       return data;
     } catch (error) {
-      console.error("Error submitting form:", error);
       setLoading(false);
     }
   }
 
   const handleInputValidation = (inputName, inputValue) => {
     if (inputName === "firstName" || inputName === "lastName") {
-      const nameRegex = /^[a-zA-Z]+$/;
+      const nameRegex = /^[a-zA-Z\s]+$/; // Updated regex to allow spaces
       const testName = nameRegex.test(inputValue);
 
       setErr((prev) => ({
