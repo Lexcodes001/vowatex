@@ -161,6 +161,9 @@ const Form = ({ formType, jobName }) => {
         window.location.hostname === "localhost" ? url : endpoint,
         {
           method: "POST",
+          headers: {
+            
+          },
           body: finalFormData,
         }
       );

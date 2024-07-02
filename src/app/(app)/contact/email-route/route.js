@@ -2,11 +2,8 @@ import { NextResponse } from "next/server";
 import UserReq from "../../../../../emails/sendUserReq";
 import { render } from "@react-email/render";
 import { handleEmailFire } from "@/lib/email-helper";
-// import { runMiddleware } from '@/lib/corsMiddleware';
-// import cors from '@/lib/corsMiddleware';
 
 export async function POST(req) {
-  // await runMiddleware(req, res, cors);
   try {
     // Parse form data from the request body
     const contentType = req.headers.get("content-type");

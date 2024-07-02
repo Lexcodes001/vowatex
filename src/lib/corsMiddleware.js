@@ -1,20 +1,10 @@
 // lib/corsMiddleware.js
 import Cors from "cors";
 
-const allowedOrigins = [
-  "https://vowatex.com",
-  "http://localhost:3000",
-];
-
+// Initialize the cors middleware
 const cors = Cors({
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "OPTIONS"],
+  origin: "https://vowatex.com", // Allow requests from this domain
+  methods: ["GET", "POST", "OPTIONS"], // Allowed methods
 });
 
 function runMiddleware(req, res, fn) {
@@ -28,5 +18,4 @@ function runMiddleware(req, res, fn) {
   });
 }
 
-export default cors;
-export { runMiddleware };
+export { cors, runMiddleware };
