@@ -157,10 +157,13 @@ const Form = ({ formType, jobName }) => {
       const endpoint = "/contact/email-route";
       const url = `${baseURL}${endpoint}`;
 
-      const response = await fetch(url, {
-        method: "POST",
-        body: finalFormData,
-      });
+      const response = await fetch(
+        window.location.hostname === "localhost" ? url : endpoint,
+        {
+          method: "POST",
+          body: finalFormData,
+        }
+      );
 
       if (!response.ok) {
         dispatchAction(
@@ -173,13 +176,12 @@ const Form = ({ formType, jobName }) => {
         throw new Error(`An error has occurred: ${response.statusText}`);
       }
 
-
       const text = await response.text();
       console.log("Response text:", text);
 
       const data = JSON.parse(text);
       console.log("Success:", data);
-      
+
       dispatchAction(
         "action_status",
         "dynamic",
