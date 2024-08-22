@@ -158,17 +158,17 @@ const Modal = () => {
               </Button>
             ))}
             <div className={styles["status"]}>
-              <Button
+              <button
                 onClick={(e) => {
                   e.preventDefault();
                   setVisible((prev) => !prev);
                 }}
               >
                 <Image src={!visible ? visibleSvg : hiddenSvg} alt="" />
-              </Button>
+              </button>
             </div>
             <Button onClick={() => handleNumberClick(0)}>0</Button>
-            <Button className={styles["delete"]} onClick={handleDelete}>
+            <button className={styles["delete"]} onClick={handleDelete}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
@@ -180,7 +180,7 @@ const Modal = () => {
                   fill-rule="evenodd"
                 />
               </svg>
-            </Button>
+            </button>
           </div>
 
           <div className={styles.actions}>

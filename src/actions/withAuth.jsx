@@ -9,13 +9,17 @@ const withAuth = (WrappedComponent) => {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const [lastActivity, setLastActivity] = useState(
-      localStorage.getItem("lastActivity")
-        ? parseInt(localStorage.getItem("lastActivity"))
-        : Date.now()
-    );
+    const [lastActivity, setLastActivity] = useState(Date.now());
 
     useEffect(() => {
+      // Access localStorage only on the client side
+      if (typeof window !== "undefined") {
+        const storedLastActivity = localStorage.getItem("lastActivity");
+        if (storedLastActivity) {
+          setLastActivity(parseInt(storedLastActivity));
+        }
+      }
+
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (!user) {
           router.push("/admin/auth/login");
@@ -36,8 +40,6 @@ const withAuth = (WrappedComponent) => {
       const interval = setInterval(() => {
         const now = Date.now();
         if (now - lastActivity > 600 * 1000) {
-          // 10 seconds
-          // setShowModal(true);
           router.push("/admin/auth/modal");
         }
       }, 1000);
