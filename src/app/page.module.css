@@ -78,7 +78,7 @@
   overflow: hidden;
 }
 
-.main section {
+.main section.homeSect {
   width: calc(100% - 4rem);
   max-width: 600px;
   display: flex;
@@ -465,7 +465,7 @@ section.process .steps .step article p {
     width: 100%;
   }
 
-  .main section {
+  .main section.homeSect {
     padding: 0 3rem;
     width: calc(100% - 6rem);
     max-width: calc(100% - 6rem);
@@ -639,9 +639,9 @@ section.process .steps .step article p {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
   }
 
   section.solutions article .solution {
@@ -712,7 +712,7 @@ section.process .steps .step article p {
 }
 
 @media only screen and (min-width: 900px) {
-  .main section {
+  .main section.homeSect {
     width: calc(90% - 6rem);
     max-width: calc(90% - 6rem);
   }
@@ -732,7 +732,7 @@ section.process .steps .step article p {
 }
 
 @media only screen and (min-width: 1170px) {
-  .main section {
+  .main section.homeSect {
     width: calc(80% - 6rem);
     max-width: calc(80% - 6rem);
   }

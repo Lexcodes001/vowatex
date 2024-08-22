@@ -18,6 +18,12 @@ const defAlertObj = {
     type: "",
     isDisp: false,
   },
+  login_status: {
+    mode: "",
+    text: "",
+    type: "",
+    isDisp: false,
+  },
 };
 
 let updatedState, alertObj;
@@ -83,7 +89,7 @@ export const AlertContextProvider = ({ children }) => {
         "fail",
         "Connection has been lost!"
       );
-    } else if (isOnline === null) {
+    } else if (!isOnline || isOnline === null) {
       dispatchAction("internet_status", "close", "", "");
     } else {
       isFirst && setIsFirst(false);

@@ -1,0 +1,152 @@
+main.main {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--surface-2);
+}
+
+.main .wrapper {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: .5rem;
+    background-color: var(--surface-1);
+}
+
+form.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.wrapper .title {
+    width: calc(100% - 2rem);
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1{
+    color: var(--text-1);
+}
+
+.title p{
+    font-size: .7rem;
+    color: var(--text-2);
+}
+
+form .input-box {
+    width: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    position: relative;
+    background-color: var(--surface-1);
+}
+
+.input-box label {
+    position: absolute;
+    font-size: .9rem;
+    color: var(--text-2);
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+    cursor: text;
+}
+
+.input-box input:focus+label,
+.input-box input.not-empty+label {
+    top: -.7rem;
+    left: 0.8rem;
+    font-size: .7rem;
+    font-weight: 600;
+    transform: none;
+    padding: 0 .2rem;
+    color: var(--text-2);
+    background-color: var(--surface-1);
+}
+
+.input-box input {
+    height: 1.1rem;
+    color: var(--text-1);
+    padding: 0.6rem 2.5rem 0.6rem 0.8rem;
+    outline: 1px solid var(--border-line);
+    border-radius: 5px;
+    background-color: var(--surface-1);
+}
+
+.input-box>input:focus,
+.input-box>textarea:focus {
+    outline: 2px solid var(--text-2);
+}
+
+.input-box .inputError {
+    outline: 1px solid var(--soft-red) !important;
+}
+
+.input-box span.status {
+    height: 2rem;
+    padding-left: .6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    gap: .2rem;
+    justify-content: flex-end;
+    align-items: center;
+    border-image: fill 0 linear-gradient(to left,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 0, 0, 0.01) 50%,
+            rgba(0, 0, 0, 0.01) 80%,
+            rgba(0, 0, 0, 0.01) 90%,
+            rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(1px);
+}
+
+.input-box span.status button {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+.input-box span.status button img {
+    width: fit-content;
+    height: 1.2rem;
+}
+
+.input-box span.status svg {
+    transform: scale(0.8);
+}
+
+.input-box .err {
+    font-size: 0.6rem;
+    color: var(--soft-red);
+}
+
+.form .submit{
+    padding: 1rem;
+    border-radius: .5rem;
+    color: var(--surface-1);
+    font-weight: 800;
+    background-color: var(--text-2);
+}
+
+.form .submit:hover{
+    background-color: var(--text-1);
+}
+
+.disabled{
+    opacity: 0.5;
+}

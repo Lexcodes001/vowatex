@@ -220,6 +220,7 @@ export default function Navigation() {
                   </motion.p>
                 </Link>
               ))}
+              <Link className={styles["admin"]} href={'/admin'}>Admin</Link>
             </div>
           </div>
         </motion.div>

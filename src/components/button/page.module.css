@@ -1,0 +1,33 @@
+.btn {
+    /* display: inline-flex;
+    align-items: center;
+    justify-content: center; */
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    z-index: 2;
+}
+
+.btn:hover {
+    filter: brightness(115%);
+    cursor: pointer;
+}
+
+.btn-ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 1s ease-out;
+    background: rgba(0, 0, 0, 0.3);
+    /* Customize the ripple color */
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

@@ -19,12 +19,12 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    padding: 4px 4px;
+    padding: 3px 4px;
     margin: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.3rem;
+    border-radius: 20rem;
     background-color: #adb5bd;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, .2), -2px -2px 30px rgba(0, 0, 0, .2);
 }
@@ -41,10 +41,11 @@
     color: #c7ced4;
     width: fit-content;
     height: fit-content;
-    padding: 7px 10px;
+    padding: 6px 10px;
     margin: 0;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     background-color: var(--brand);
+    font-size: 0.65rem;
 }
 
 .alert-box .txt em.bold {

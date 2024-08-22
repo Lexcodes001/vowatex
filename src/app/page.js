@@ -144,7 +144,7 @@ export default function Home() {
           <Image src={Unleash} alt="unleash Illustration" priority />
         </section>
 
-        <section className={styles["about"]}>
+        <section className={`${styles.homeSect} ${styles["about"]}`}>
           <Header>What we are</Header>
           <div className={styles["scroll-effect"]}>
             <ParallaxText baseVelocity={-5}>What we are ◦</ParallaxText>
@@ -163,7 +163,7 @@ export default function Home() {
           <Values all={3} />
         </section>
 
-        <section className={styles["why"]}>
+        <section className={`${styles.homeSect} ${styles["why"]}`}>
           <Header>Why us?</Header>
           <div className={styles["scroll-effect"]}>
             <ParallaxText baseVelocity={-5}>Why us? ◦</ParallaxText>
@@ -247,7 +247,7 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles["solutions"]}>
+        <section className={`${styles.homeSect} ${styles["solutions"]}`}>
           <Header>Solutions Offered</Header>
           <div className={styles["scroll-effect"]}>
             <ParallaxText baseVelocity={5}>Solution offered ◦</ParallaxText>
@@ -272,7 +272,7 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles["acheivements"]}>
+        <section className={`${styles.homeSect} ${styles["acheivements"]}`}>
           <Header className={styles["bridge"]}>So far...</Header>
           <div className={styles["scroll-effect"]}>
             <ParallaxText baseVelocity={-5}>Acheivements ◦</ParallaxText>
@@ -347,7 +347,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles["process"]}>
+        <section className={`${styles.homeSect} ${styles["process"]}`}>
           <Header>Our Content Voyage</Header>
           <div className={styles["scroll-effect"]}>
             <ParallaxText baseVelocity={-5}>Our Content Voyage ◦</ParallaxText>

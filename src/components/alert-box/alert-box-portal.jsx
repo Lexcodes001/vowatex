@@ -7,7 +7,7 @@ import { AlertContext } from "@/contexts/alert-context";
 const AlertBoxPortal = () => {
   const { alertObjState, dispatchAction } = useContext(AlertContext);
   const alertArr = Object.values(alertObjState);
-  const filteredArr = alertArr.filter((elem) => elem.isDisp === true);
+  const filteredArr = alertArr.filter((elem) => elem.isDisp);
 
   const [portalNode, setPortalNode] = useState(null);
 

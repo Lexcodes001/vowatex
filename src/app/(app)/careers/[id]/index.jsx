@@ -121,7 +121,6 @@ const CareerPage = ({ career }) => {
 
       <section className={`${styles["job-sect"]} ${styles[""]}`}>
         <Header>Requirements:</Header>
-        {/* <p>The job description includes the following responsibilities:</p> */}
         <ul>
           {careerData.requirements.map((item) => (
             <motion.li

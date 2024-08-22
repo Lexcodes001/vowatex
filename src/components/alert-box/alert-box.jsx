@@ -11,7 +11,7 @@ export const AlertBox = ({ arr, filteredArr }) => {
   const getProp = (params) => {
     let index = arr.indexOf(params);
 
-    const finalProp = index === 0 ? "internet_status" : "action_status";
+    const finalProp = index === 0 ? "action_status" : index === 1 ? "internet_status" : "login_status";
     return { index, finalProp };
   };
 

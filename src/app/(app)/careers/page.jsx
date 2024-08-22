@@ -7,14 +7,10 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Card from "@/components/flip-card/page";
 import { Vacancies } from "./constants";
-import EngagementIcon from "@/images/icons-engagement.webp";
-import AutomateIcon from "@/images/icons-automate.webp";
-import ContentIcon from "@/images/icons-content.webp";
-import ExperienceIcon from "@/images/icons-experience.webp";
-import ExpertIcon from "@/images/icons-expert.webp";
-import StoryIcon from "@/images/icons-story.webp";
-import TrendIcon from "@/images/icons-trend.webp";
-import ForwardIcon from "@/images/icons-forward-button.webp";
+import Salary from "@/images/big_salary.webp";
+import Increase from "@/images/salary_increase.webp";
+import Vacation from "@/images/vacation.webp";
+import Health from "@/images/health.webp";
 import Image from "next/image";
 import Hiring from "@/images/hiring.svg";
 import Writing from "@/images/writing.webp";
@@ -24,22 +20,22 @@ import { Variants } from "@/lib/variants";
 const valuesObj = [
   {
     name: "Competitive Salary",
-    icon: StoryIcon,
+    icon: Salary,
     desc: "At Vowatex, we offer a competitive salary package that is in line with industry standards and commensurate with your experience and skills.",
   },
   {
     name: "Office Vacation",
-    icon: AutomateIcon,
+    icon: Vacation,
     desc: "Vowatex’s strategic blogger outreach, connecting you with influential voices to expand your online presence and engagement.",
   },
   {
     name: "Health Insurance",
-    icon: ContentIcon,
+    icon: Health,
     desc: "We conduct thorough improvement analyses, pinpointing opportunities for growth and optimization to enhance your business performance.",
   },
   {
     name: "Salary Increases",
-    icon: EngagementIcon,
+    icon: Increase,
     desc: "Vowatex’s strategic blogger outreach, connecting you with influential voices to expand your online presence and engagement.",
   },
 ];
