@@ -19,13 +19,13 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    padding: 3px 4px;
+    padding: 0 4px;
     margin: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20rem;
-    background-color: #adb5bd;
+    background-color: var(--text-1);
     box-shadow: 2px 2px 30px rgba(0, 0, 0, .2), -2px -2px 30px rgba(0, 0, 0, .2);
 }
 
@@ -38,14 +38,44 @@
 
 
 .alert-box .txt {
-    color: #c7ced4;
+    color: var(--surface-1);
     width: fit-content;
     height: fit-content;
     padding: 6px 10px;
     margin: 0;
-    border-radius: 0.5rem;
-    background-color: var(--brand);
+    /* border-radius: 0.5rem; */
+    /* border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, var(--opaq) 1%, var(--surface-1) 50%, var(--opaq) 100%); */
     font-size: 0.65rem;
+    position: relative;
+    /* z-index: 100; */
+    background: var(--text-1);
+
+}
+
+.alert-box .txt::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 15%, var(--text-2) 50%, rgba(0,0,0,0) 85%);
+}
+
+.alert-box .txt::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 15%, var(--text-2) 50%, rgba(0,0,0,0) 85%);
 }
 
 .alert-box .txt em.bold {
@@ -54,12 +84,12 @@
     font-size: 0.9rem;
 }
 
-.alert-box .success {
-    background-color: var(--green);
+.success {
+    border: 1px solid var(--green);
 }
 
-.alert-box .fail {
-    background-color: var(--soft-red);
+.fail {
+    border: 1px solid var(--soft-red);
 }
 
 .alert-box .close {
@@ -68,12 +98,12 @@
 }
 
 .alert-box .close svg path {
-    fill: rgba(0, 0, 0, .6);
+    fill: var(--surface-4);
 }
 
 @media only screen and (min-width: 768px) {
     .info-container {
-            top: 86%;
-            padding-top: 1.5rem;
-        }
+        top: 86%;
+        padding-top: 1.5rem;
+    }
 }

@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { auth } from "@/config/firebase";
+import Loader from "@/app/loading";
 
 const withAuth = (WrappedComponent) => {
   const HOC = (props) => {
@@ -53,7 +54,7 @@ const withAuth = (WrappedComponent) => {
     }, [router, lastActivity]);
 
     if (loading) {
-      return <div>Loading...</div>;
+      return <Loader />;
     }
 
     return (

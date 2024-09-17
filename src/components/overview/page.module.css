@@ -1,6 +1,6 @@
 section.overview {
     width: calc(100% - 4rem);
-    max-width: 600px;
+    /* max-width: 600px; */
     padding: 4.5rem 2rem 0;
     margin: auto;
     height: calc(45dvh);
@@ -80,9 +80,10 @@ section.overview header {
 
 @media only screen and (min-width: 768px) {
     section.overview {
-        margin: auto 3rem;
-        width: calc(100% - 10rem);
-        max-width: calc(100% - 10rem);
+        /* margin: auto 3rem; */
+        
+        /* width: calc(100% - 10rem);
+        max-width: calc(100% - 10rem); */
     }
 
     section.overview header {
@@ -96,8 +97,8 @@ section.overview header {
 
 @media only screen and (min-width: 900px) {
     section.overview {
-        width: calc(90% - 10rem);
-        max-width: calc(90% - 10rem);
+        /* width: calc(90% - 10rem);
+        max-width: calc(90% - 10rem); */
     }
 
     section.overview header {
@@ -107,8 +108,8 @@ section.overview header {
 
 @media only screen and (min-width: 1170px) {
     section.overview {
-        width: calc(80% - 10rem);
-        max-width: calc(80% - 10rem);
+        /* width: calc(80% - 10rem);
+        max-width: calc(80% - 10rem); */
     }
 
     section.overview header {

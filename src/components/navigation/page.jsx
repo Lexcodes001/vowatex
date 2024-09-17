@@ -2,14 +2,14 @@
 import Hamburger from "hamburger-react";
 import AnimatedText from "@/components/framer/text-animation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Variants } from "@/lib/variants";
 import styles from "./page.module.css";
 import Image from "next/image";
+import Logo from "@/images/logo.svg";
 import { Links } from "./constants";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import Logo from "@/images/logo.svg";
 import Link from "next/link";
-import { Variants } from "@/lib/variants";
 
 // function useSticky() {
 //   const ref = useRef(null);
@@ -220,7 +220,7 @@ export default function Navigation() {
                   </motion.p>
                 </Link>
               ))}
-              <Link className={styles["admin"]} href={'/admin'}>Admin</Link>
+              {/* <Link className={styles["admin"]} href={'/admin'}>Admin</Link> */}
             </div>
           </div>
         </motion.div>

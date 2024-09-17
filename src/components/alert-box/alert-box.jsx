@@ -74,7 +74,7 @@ export const AlertBox = ({ arr, filteredArr }) => {
                 zIndex: `${getProp().index + 5}`,
                 marginTop: `${getProp().index !== 0 ? "-10px" : "5px"}`,
               }}
-              className={classes["alert-box"]}
+              className={`${classes["alert-box"]} ${classes[arr.mode] || ""}`}
               initial={{ opacity: 0, x: 100, scale: 0 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
@@ -106,8 +106,9 @@ export const AlertBox = ({ arr, filteredArr }) => {
                   </svg>
                 )}
               </span>
-              <span className={`${classes["txt"]} ${classes[arr.mode] || ""}`}>
+              <span className={`${classes["txt"]}`}>
                 {arr.text}
+                <span className={classes.pseudo}></span>
               </span>
               <span
                 className={classes["close"]}
