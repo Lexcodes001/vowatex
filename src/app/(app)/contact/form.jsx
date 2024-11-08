@@ -11,14 +11,14 @@ import Loader from "@/app/loading";
 
 const Form = ({ formType, jobName }) => {
   const defaultInputs = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    tel: "",
-    channel: "",
-    request: "",
+    firstName: "Alexander",
+    lastName: "Adetayo",
+    email: "adetayoalexander12@gmail.com",
+    tel: "09127084405",
+    channel: "Lexthelearner",
+    request: "I need the Algorithm to favor me!",
     resume: null,
-    coverLetter: "",
+    coverLetter: "I need the Algorithm to favor me!",
     type: formType,
   };
 
@@ -70,137 +70,284 @@ const Form = ({ formType, jobName }) => {
     return `${start}...${end}`;
   }
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const storageRef = ref(storage, `resume/${fileName}`);
-    const uploadTask = uploadBytesResumable(storageRef, selectedFile);
 
-    // Create a promise to handle the upload completion
-    const uploadPromise = new Promise((resolve, reject) => {
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
-          switch (snapshot.state) {
-            case "paused":
-              break;
-            case "running":
-              // dispatchAction(
-              //   "action_status",
-              //   "static",
-              //   "success",
-              //   `Upload has started...`
-              // );
-
-              break;
+    if (formData.type === 'application') {
+      const storageRef = ref(storage, `resume/${fileName}`);
+      const uploadTask = uploadBytesResumable(storageRef, selectedFile);
+  
+      const uploadPromise = new Promise((resolve, reject) => {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(`Upload is ${progress}% done`);
+  
+            switch (snapshot.state) {
+              case "paused":
+                console.log("Upload is paused");
+                break;
+              case "running":
+                console.log("Upload is running");
+                break;
+            }
+          },
+          (error) => {
+            switch (error.code) {
+              case "storage/unauthorized":
+                reject(new Error("User doesn't have permission to access the object"));
+                break;
+              case "storage/canceled":
+                reject(new Error("User canceled the upload"));
+                break;
+              case "storage/unknown":
+                reject(new Error("Unknown error occurred, inspect error.serverResponse"));
+                break;
+            }
+          },
+          async () => {
+            try {
+              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+              setFileUrl(downloadURL);
+              resolve(downloadURL);
+            } catch (error) {
+              reject(error);
+            }
           }
-        },
-        (error) => {
-          switch (error.code) {
-            case "storage/unauthorized":
-              reject(
-                new Error("User doesn't have permission to access the object")
-              );
-              break;
-            case "storage/canceled":
-              reject(new Error("User canceled the upload"));
-              break;
-            case "storage/unknown":
-              reject(
-                new Error(
-                  "Unknown error occurred, inspect error.serverResponse"
-                )
-              );
-              break;
-          }
-        },
-        async () => {
-          try {
-            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-            setFileUrl(downloadURL);
-            // dispatchAction(
-            //   "action_status",
-            //   "dynamic",
-            //   "success",
-            //   `Upload is completed!`
-            // );
-            resolve(downloadURL);
-          } catch (error) {
-            reject(error);
-          }
-        }
-      );
-    });
+        );
+      });
+    }
 
     try {
-      // Wait for the upload to complete and get the download URL
-      const downloadURL = await uploadPromise;
+      // const downloadURL = await uploadPromise;
 
-      const finalFormData = new FormData(e.target);
-      for (const [key, value] of Object.entries(formData)) {
-        finalFormData.append(
-          `${key}`,
-          typeof value === "string" ? value.trim() : value
-        );
-      }
-      finalFormData.append("resume", selectedFile);
-      finalFormData.append("fileName", fileName);
-      finalFormData.append("fileUrl", downloadURL);
+      // Collect email data
+      const emailData = {
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        email: formData.email.trim(),
+        tel: formData.tel.trim(),
+        channel: formData.channel,
+        request: formData.request.trim(),
+        fileName,
+        fileUrl,
+        type: formData.type,
+        jobName: formData.jobName,
+      };
 
-      const baseURL =
-        window.location.hostname === "localhost"
-          ? "http://localhost:3000"
-          : "https://vowatex.com";
-      const endpoint = "/contact/email-route";
-      const url = `${baseURL}${endpoint}`;
+      const {firstName, lastName, email, tel, channel, request, type, jobName} = emailData;
 
-      const response = await fetch(
-        window.location.hostname === "localhost" ? url : endpoint,
-        {
-          method: "POST",
-          headers: {},
-          body: finalFormData,
+      const renderClientRequestHTML = () => `
+  <div style="display: flex; flex-direction: column; border-bottom: 5px solid #B0B0B0;">
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Name</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${firstName} ${lastName}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Email</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${email}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Phone no.</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${tel}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>YT channel</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${channel}</span>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Service request</span>
+      </div>
+      <div style="width: 100%; text-align: left; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${request}</span>
+      </div>
+    </div>
+  </div>
+`;
+
+      const renderJobRequestHTML = () => `
+  <div style="display: flex; flex-direction: column; border-bottom: 5px solid #B0B0B0;">
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Name</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${firstName} ${lastName}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Email</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${email}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Phone no.</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${tel}</span>
+      </div>
+    </div>
+
+    <div style="border-bottom: 1px solid #D3D3D3; display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Job Applied for</span>
+      </div>
+      <div style="width: 100%; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${jobName}</span>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div style="width: 100%; text-align: center; font-size: 12px; color: #7D7D7D;">
+        <span>Cover Letter</span>
+      </div>
+      <div style="width: 100%; text-align: left; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+        <span>${coverLetter}</span>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; padding: 16px; background-color: #E0E0E0; text-align: center; font-size: 14px; font-weight: bold; color: #4F4F4F;">
+      <a href="${fileUrl}" style="padding: 12px 20px; background-color: #8A8A8A; color: #FFFFFF; text-decoration: none; border-radius: 4px;">Preview Resume</a>
+    </div>
+  </div>
+`;
+
+      const htmlContent = `
+    <html>
+      <head>
+        <style>
+          /* Tailwind CSS or custom styles */
+          .bg-brand { background-color: #7d1a1a; }
+          .bg-brand-light { background-color: #b02525; }
+          .text-brand-light { color: #b02525; }
+          .text-neutral-500 { color: #6b7280; }
+          .text-neutral-700 { color: #374151; }
+          .text-neutral-800 { color: #1f2937; }
+          .text-neutral-100 { color: #f3f4f6; }
+          .text-sm { font-size: 0.875rem; }
+          .font-bold { font-weight: 700; }
+          .font-light { font-weight: 300; }
+          .rounded { border-radius: 0.375rem; }
+          .w-full { width: 100%; }
+          .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+          .px-4 { padding-left: 1rem; padding-right: 1rem; }
+          .pt-0 { padding-top: 0; }
+          .pb-2 { padding-bottom: 0.5rem; }
+          .border { border-width: 1px; }
+          .border-solid { border-style: solid; }
+          .shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+          .text-center { text-align: center; }
+          .bg-blue-400 { background-color: #60a5fa; }
+          .bg-green-400 { background-color: #34d399; }
+          .bg-neutral-100 { background-color: #f3f4f6; }
+          .bg-neutral-50 { background-color: #fafafa; }
+        </style>
+      </head>
+      <body class="px-3 bg-neutral-100 rounded border-solid border-y-4 border-brand-light">
+        <div class="container">
+          <div class="flex gap-2 justify-center items-center">
+            <div class="w-fit">
+              <img src="https://firebasestorage.googleapis.com/v0/b/vowatex-8f3af.appspot.com/o/email%2Flogo.png?alt=media&token=0658cc2f-f112-4cac-a3fb-d93d3740a7a1" alt="logo" width="40" height="50" class="object-cover" />
+            </div>
+            <div class="w-fit">
+              <p class="pt-2 font-bold text-base text-brand-light">Vowatex.</p>
+            </div>
+          </div>
+          <h1 class="pl-5 py-4 rounded text-left text-xl font-bold text-neutral-800 border-l-8 border-solid border-neutral-700 ${type === 'application' ? 'bg-blue-400' : 'bg-green-400'}">
+            New ${type === 'application' ? 'Job Application' : 'Client Request'}
+          </h1>
+        </div>
+
+        <div class="px-4 pt-0 pb-2 bg-neutral-50 border-neutral-200 border-solid shadow-lg rounded-lg">
+          ${type === 'application' ? renderJobRequestHTML() : renderClientRequestHTML()}
+        </div>
+
+        <div class="text-xs text-center text-neutral-500">
+          Copyright 2024 © Vowatex Content.
+        </div>
+      </body>
+    </html>
+  `;
+
+  // const credentials = {
+  //   host: process.env.NEXT_PUBLIC_SMTP_HOST,
+  //   port: 465,
+  //   secure: true,
+  //   auth: {user: 'vowatexcontentsol@gmail.com',
+  //     pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
+  //   }
+  // }
+
+  // const emailContent = {
+  //   from: process.env.NEXT_PUBLIC_SMTP_USER,
+  //   to: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
+  //   subject: `New ${type === "application" ? "Job Application" : "Client Request"} from ${emailData.firstName} ${emailData.lastName}`,
+  //   html: htmlContent,
+  // }
+
+  // smtp.connect(credentials)
+  // .then(() => smtp.sendEmail(emailContent))
+  // .then(info => console.log('Email sent!'))
+  // .catch(err > console.error(err));
+
+      // Send email
+      window.Email?.send({
+        SecureToken: process.env.NEXT_PUBLIC_SMTP_TOKEN,
+        To: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
+        From: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
+        Subject: `New ${type === "application" ? "Job Application" : "Client Request"} from ${emailData.firstName} ${emailData.lastName}`,
+        Body: emailData.request,
+      }).then((message) => {
+        if (message === "OK") {
+          alert("Email sent successfully!");
+        } else {
+          alert(`Failed to send email: ${message}`);
         }
-      );
+        setFormData(defaultInputs);
+        setLoading(false);
+      }).catch(error => {
+        console.error("Error sending email:", error);
+        setLoading(false);
+      });
 
-      if (!response.ok) {
-        dispatchAction(
-          "action_status",
-          "static",
-          "fail",
-          `An error has occurred: ${response.statusText}`
-        );
-
-        throw new Error(`An error has occurred: ${response.statusText}`);
-      }
-
-      const text = await response.text();
-      console.log("Response text:", text);
-
-      const data = JSON.parse(text);
-      console.log("Success:", data);
-
-      dispatchAction(
-        "action_status",
-        "dynamic",
-        "success",
-        `${
-          formType === "application" ? "Job application" : "Request"
-        } successfully sent!`
-      );
-      setFormData(defaultInputs);
-      setLoading(false);
-
-      console.log("Data: ", data);
-      return data;
     } catch (error) {
+      console.error("Error:", error);
       setLoading(false);
-      console.log("Error: ", error);
     }
-  }
+  };
+
+
+
+
 
   const handleInputValidation = (inputName, inputValue) => {
     if (inputName === "firstName" || inputName === "lastName") {
@@ -213,8 +360,8 @@ const Form = ({ formType, jobName }) => {
           inputValue.length === 0
             ? "Input is empty"
             : testName
-            ? ""
-            : "No number or special character is allowed",
+              ? ""
+              : "No number or special character is allowed",
       }));
     } else if (inputName === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -225,8 +372,8 @@ const Form = ({ formType, jobName }) => {
           inputValue.length === 0
             ? "Input is empty"
             : testEmail
-            ? ""
-            : "Invalid email address",
+              ? ""
+              : "Invalid email address",
       }));
     } else {
       return;
@@ -315,9 +462,8 @@ const Form = ({ formType, jobName }) => {
             type="text"
             name="firstName"
             id="firstName"
-            className={`${err.firstName ? styles["inputError"] : ""} ${
-              formData.firstName !== "" ? styles["not-empty"] : ""
-            }`}
+            className={`${err.firstName ? styles["inputError"] : ""} ${formData.firstName !== "" ? styles["not-empty"] : ""
+              }`}
             value={formData.firstName}
             onChange={handleChange}
           />
@@ -339,9 +485,8 @@ const Form = ({ formType, jobName }) => {
             type="text"
             name="lastName"
             id="lastName"
-            className={`${err.lastName ? styles["inputError"] : ""} ${
-              formData.lastName !== "" ? styles["not-empty"] : ""
-            }`}
+            className={`${err.lastName ? styles["inputError"] : ""} ${formData.lastName !== "" ? styles["not-empty"] : ""
+              }`}
             value={formData.lastName}
             onChange={handleChange}
           />
@@ -363,9 +508,8 @@ const Form = ({ formType, jobName }) => {
             type="email"
             name="email"
             id="email"
-            className={`${err.email ? styles["inputError"] : ""} ${
-              formData.email !== "" ? styles["not-empty"] : ""
-            }`}
+            className={`${err.email ? styles["inputError"] : ""} ${formData.email !== "" ? styles["not-empty"] : ""
+              }`}
             value={formData.email}
             onChange={handleChange}
           />
@@ -410,9 +554,8 @@ const Form = ({ formType, jobName }) => {
                 type="text"
                 name="channel"
                 id="channel"
-                className={`${
-                  formData.channel !== "" ? styles["not-empty"] : ""
-                }`}
+                className={`${formData.channel !== "" ? styles["not-empty"] : ""
+                  }`}
                 value={formData.channel}
                 onChange={handleChange}
               />
@@ -432,9 +575,8 @@ const Form = ({ formType, jobName }) => {
               <textarea
                 name="request"
                 id="request"
-                className={`${
-                  formData.request !== "" ? styles["not-empty"] : ""
-                }`}
+                className={`${formData.request !== "" ? styles["not-empty"] : ""
+                  }`}
                 value={formData.request}
                 onChange={handleChange}
               ></textarea>
@@ -459,9 +601,8 @@ const Form = ({ formType, jobName }) => {
               <textarea
                 name="coverLetter"
                 id="coverLetter"
-                className={`${
-                  formData.coverLetter !== "" ? styles["not-empty"] : ""
-                }`}
+                className={`${formData.coverLetter !== "" ? styles["not-empty"] : ""
+                  }`}
                 value={formData.coverLetter}
                 onChange={handleChange}
               ></textarea>
@@ -477,9 +618,8 @@ const Form = ({ formType, jobName }) => {
                 easings: "easeOut",
                 staggerChildren: 0.5,
               }}
-              className={`${styles["input"]} ${
-                previewUrl !== null ? styles["active-box"] : styles["file-box"]
-              } input`}
+              className={`${styles["input"]} ${previewUrl !== null ? styles["active-box"] : styles["file-box"]
+                } input`}
             >
               <label
                 className={styles["file-label"]}
@@ -595,9 +735,8 @@ const Form = ({ formType, jobName }) => {
         />
         <button
           type="submit"
-          className={`${styles["submit"]} ${
-            !isValid ? styles.loading : loading ? styles.loading : ""
-          }`}
+          className={`${styles["submit"]} ${!isValid ? styles.loading : loading ? styles.loading : ""
+            }`}
           disabled={loading || !isValid}
         >
           {loading ? "Submitting..." : "Submit"}

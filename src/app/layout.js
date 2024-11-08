@@ -2,6 +2,7 @@ import { ThemeContextProvider } from "@/contexts/theme";
 import { AlertContextProvider } from "@/contexts/alert-context";
 import AlertBoxPortal from "@/components/alert-box/alert-box-portal";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Toggle from "@/components/toggle/page";
 
@@ -30,6 +31,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script src="https://smtpjs.com/v3/smtp.js" />
+      </head>
       <body className={`${montserrat.variable} ${montserratItalic.variable}`}>
         <AlertContextProvider>
           <ThemeContextProvider>
