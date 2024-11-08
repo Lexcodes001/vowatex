@@ -11,7 +11,7 @@ import Loader from "@/app/loading";
 
 const Form = ({ formType, jobName }) => {
   const defaultInputs = {
-    firstName: "Alexanderrra",
+    firstName: "Alex",
     lastName: "Adetayo",
     email: "adetayoalexander12@gmail.com",
     tel: "09127084405",
