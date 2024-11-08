@@ -11,7 +11,7 @@ import Loader from "@/app/loading";
 
 const Form = ({ formType, jobName }) => {
   const defaultInputs = {
-    firstName: "Alexander",
+    firstName: "Alexanderrra",
     lastName: "Adetayo",
     email: "adetayoalexander12@gmail.com",
     tel: "09127084405",
@@ -323,7 +323,7 @@ const Form = ({ formType, jobName }) => {
       window.Email?.send({
         SecureToken: process.env.NEXT_PUBLIC_SMTP_TOKEN,
         To: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
-        From: process.env.NEXT_PUBLIC_SMTP_TO_EMAIL,
+        From: process.env.NEXT_PUBLIC_SMTP_USER,
         Subject: `New ${type === "application" ? "Job Application" : "Client Request"} from ${emailData.firstName} ${emailData.lastName}`,
         Body: emailData.request,
       }).then((message) => {
